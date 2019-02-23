@@ -26,14 +26,26 @@ include ("includes/header.php");
                             </tr>
                         </thead>
                         <tbody>
-                        <?php for($i=0;$i<sizeof($datos);$i++){?>
+                            <?php for($i=0;$i<sizeof($datos);$i++){?>
                             <tr>
-                                <th><?php echo $datos[$i]["id"]; ?></th>
-                                <th><?php echo $datos[$i]["nombre"]; ?></th>
-                                <th><?php echo $datos[$i]["capital"]; ?></th>
-                                <th></th>
+                                <th>
+                                    <?php echo $datos[$i]["id"]; ?>
+                                </th>
+                                <th>
+                                    <?php echo $datos[$i]["nombre"]; ?>
+                                </th>
+                                <th>
+                                    <?php echo $datos[$i]["capital"]; ?>
+                                </th>
+                                <th>
+
+                                    
+                                    <a href="editarCuentas.php?id=<?php echo $datos[$i]["id"]; ?>" class="btn btn-xs btn-warning">Editar</a>
+                                    <a href="" class="btn btn-xs btn-danger">Eliminar</a>
+                                   
+                                </th>
                             </tr>
-                        <?php }?>    
+                            <?php }?>
                         </tbody>
                     </table>
                 </div>
