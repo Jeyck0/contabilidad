@@ -3,12 +3,15 @@
 require_once ("../clases/Conexion.php");
 require_once ("../clases/Cuenta.php");
 require_once ("../clases/CatEgresos.php");
+require_once ("../clases/CatPadreEgreso.php");
 
 $cuentas = new Cuenta();
 $datos = $cuentas->obtenerDatosCuenta();
 
 $catEgresos = new CatEgresos();
 $datos2 = $catEgresos->obtenerDatosCatEgresos();
+
+
 
 
 include ("includes/header.php");
@@ -36,7 +39,7 @@ include ("includes/header.php");
                                 <select name="select_cat_egresos" id="" class="form-control">
                                     <option value="" disabled selected>-- Seleccione --</option>
                                     <?php for($i=0;$i<sizeof($datos2);$i++){?>
-                                        <option value="<?php echo $datos2[$i]["id"];?>"><?php echo $datos2[$i]["nombre"];}?></option>
+                                        <option value="<?php echo $datos2[$i]["id_categoria"];?>"><?php echo $datos2[$i]["nombre_categoria"];}?></option>
                                     <?php?>    
                                 </select>
                             </div>
@@ -58,7 +61,8 @@ include ("includes/header.php");
         </div>
     </div>
 </div>
-
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/categorias.js"></script>
 <?php include ("includes/footer.php");?>
 
 

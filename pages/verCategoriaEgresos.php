@@ -28,7 +28,7 @@ include ("includes/header.php");
                         <tbody>
                         <?php for($i=0;$i<sizeof($datos);$i++){?>
                             <tr>
-                                <th><?php echo $datos[$i]["id"]; ?></th>
+                                <th><?php echo $datos[$i]["id_cat_egreso"]; ?></th>
                                 <th><?php echo $datos[$i]["codigo"]; ?></th>
                                 <th><?php echo $datos[$i]["nombre"]; ?></th>
                                 <th></th>

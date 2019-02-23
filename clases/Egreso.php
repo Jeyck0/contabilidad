@@ -28,7 +28,7 @@ Class Egreso {
 
     public function obtenerDatosEgresos(){
         $conectar = $this->conectar->conectar();
-        $query ="SELECT e.comentario,e.fecha,e.id,e.monto,c.nombre as cnombre,cat_e.nombre FROM egresos e INNER JOIN cuentas c ON e.id_cuenta=c.id INNER JOIN cat_egresos cat_e ON e.id_cat_egresos = cat_e.id ORDER BY e.id ASC";   
+        $query ="SELECT e.comentario,e.fecha,e.id,e.monto,c.nombre as cnombre,cat_e.nombre FROM egresos e INNER JOIN cuentas c ON e.id_cuenta=c.id INNER JOIN cat_egresos cat_e ON e.id_cat_egresos = cat_e.id_cat_egreso ORDER BY e.id ASC";   
         $consultar = mysqli_query($conectar,$query);
 
         while($dado = mysqli_fetch_assoc($consultar)){
