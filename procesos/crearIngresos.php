@@ -9,16 +9,19 @@ $select_cuenta_ingresos = $_POST['select_cuenta_ingresos'];
 $select_cat_ingresos = $_POST['select_cat_ingresos'];
 $monto_ingreso_in = $_POST['monto_ingreso_in'];
 $comentario_ingreso_txt = $_POST['comentario_ingreso_txt'];
+$fecha_ingreso = $_POST['fecha_ingreso']; 
 
 		
 }
+
+echo $fecha_ingreso;
 
 
 
 
 
 $ingreso = new Ingreso();
-$ingreso->insertarIngresos($select_cuenta_ingresos,$select_cat_ingresos,$monto_ingreso_in,$comentario_ingreso_txt);
+$ingreso->insertarIngresos($select_cuenta_ingresos,$select_cat_ingresos,$monto_ingreso_in,$comentario_ingreso_txt,$fecha_ingreso);
 $ingreso->sumar($select_cuenta_ingresos,$monto_ingreso_in);
 
 

@@ -113,7 +113,7 @@ function tabla($s_id){
 	$conexion = new Conexion();
     $conectar =$conexion->conectar();
 
-	$query ="SELECT e.id as m0, `id_cuenta`, e.id_cat_egresos, e.id_factura, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha ,c.nombre as m1,subcat.nombre as m3,subcat.codigo as cod2,catp.codigo as cod1,catp.nombre as m2,f.folio as m5,f.fecha_emision as m6,f.fecha_pago as m7,f.tipo as m4,f.monto as m11,f.detalle as m8,p.rut as m9,p.razon_social as m10
+	$query ="SELECT e.id as m0, `id_cuenta`, e.id_cat_egresos, e.id_factura, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha ,c.nombre as m1,subcat.nombre as m3,subcat.codigo as cod2,catp.codigo as cod1,catp.nombre as m2,f.folio as m5,f.fecha_emision as m6,DATE_FORMAT(fecha_pago, '%d/%m/%Y') as m7,f.tipo as m4,f.monto as m11,f.detalle as m8,p.rut as m9,p.razon_social as m10
         FROM `egresos` e 
         INNER JOIN cuentas c 
         ON e.id_cuenta = c.id 
@@ -132,7 +132,7 @@ function tabla($s_id){
 
 	while($row=$consultar->fetch_assoc()){
         $tabla.='<div class="numero">'.$row['m0'].'</div>';
-        $tabla.='<div class="fecha">'.$row['fecha'].'</div>';
+        $tabla.='<div class="fecha">'.$row['m7'].'</div>';
         $tabla.='<div class="paguese">'.$row['m10'].'</div>';
         $tabla.='<div class="lasumade">'.'$ '.number_format($row['m11'], 0, "", ".").'</div>';
         $tabla.='<div class="cpadre">'.$row['cod1'].'</div>';

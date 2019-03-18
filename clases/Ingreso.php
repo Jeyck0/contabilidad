@@ -17,10 +17,10 @@ Class Ingreso {
         
 
     }
-    public function insertarIngresos($id_cuenta_ingreso,$id_cat_ingresos_ingreso,$monto_ingreso,$comentario_ingreso){
+    public function insertarIngresos($id_cuenta_ingreso,$id_cat_ingresos_ingreso,$monto_ingreso,$comentario_ingreso,$ingreso_fecha){
 
         $conectar = $this->conectar->conectar();
-        $query ="INSERT INTO ingresos (id_cuenta,id_cat_ingresos,monto,comentario) VALUES ('".$id_cuenta_ingreso."','".$id_cat_ingresos_ingreso."','".$monto_ingreso."','".$comentario_ingreso."')";
+        $query ="INSERT INTO ingresos (id_cuenta,id_cat_ingresos,monto,comentario,fecha) VALUES ('".$id_cuenta_ingreso."','".$id_cat_ingresos_ingreso."','".$monto_ingreso."','".$comentario_ingreso."','".$ingreso_fecha."')";
         $insertar = mysqli_query($conectar,$query);
 
         return $insertar;

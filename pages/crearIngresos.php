@@ -51,6 +51,10 @@ include ("includes/header.php");
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="">Fecha</label>
+                                <input type="date" id="datepicker" class="form-control" name="fecha_ingreso">
+                            </div>
+                            <div class="form-group">
                                 <label for="">Monto</label>
                                 <input type="text" class="form-control" name="monto_ingreso_in">
                             </div>

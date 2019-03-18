@@ -32,7 +32,7 @@ Class Factura {
 
     public function obtenerDatosFactura(){
         $conectar = $this->conectar->conectar();
-        $query ="SELECT if(estado = 'PAGADA','Pagada','Pagar') as pago,if(estado = 'PAGADA','btn-primary disabled','btn-success') as respuesta,`id_factura`, `id_proveedor`, folio as c1, DATE_FORMAT(fecha_emision, '%d/%m/%Y') as c2, `fecha_pago`, tipo as c3, monto as c4, detalle as c5, estado as c6,p.razon_social as c7,p.rut as c8
+        $query ="SELECT if(estado = 'PAGADA','Pagada','Pagar') as pago,if(estado = 'PAGADA','btn-primary disabled','btn-success') as respuesta,`id_factura`, `id_proveedor`, folio as c1, DATE_FORMAT(fecha_emision, '%d/%m/%Y') as c2, DATE_FORMAT(fecha_pago, '%d/%m/%Y') as fecha_pago, tipo as c3, monto as c4, detalle as c5, estado as c6,p.razon_social as c7,p.rut as c8
         FROM facturas f
         INNER JOIN proveedores p
         ON p.id_proveedores = f.id_proveedor";
@@ -62,7 +62,7 @@ Class Factura {
 
     public function obtenerFacturasPagadasEditar(){
         $conectar = $this->conectar->conectar();
-        $query ="SELECT `id_factura`, `id_proveedor`, folio as c1, DATE_FORMAT(fecha_emision, '%d/%m/%Y') as c2, `fecha_pago`, tipo as c3, monto as c4, detalle as c5, estado AS c6,p.razon_social as c7,p.rut as c8
+        $query ="SELECT `id_factura`, `id_proveedor`, folio as c1, DATE_FORMAT(fecha_emision, '%d/%m/%Y') as c2, DATE_FORMAT(fecha_pago, '%d/%m/%Y') as fecha_pago, tipo as c3, monto as c4, detalle as c5, estado AS c6,p.razon_social as c7,p.rut as c8
         FROM facturas f
         INNER JOIN proveedores p
         ON p.id_proveedores = f.id_proveedor WHERE estado='PAGADA'";
@@ -109,10 +109,9 @@ Class Factura {
 
     }
 
-    public function pagarFactura($sid){
-        $date = date("Ymd");
+    public function pagarFactura($sid,$sfecha){
         $conectar = $this->conectar->conectar();
-        $query_update="UPDATE facturas SET estado = '2',fecha_pago='$date' WHERE id_factura = '".$sid."' ";
+        $query_update="UPDATE facturas SET estado = '2',fecha_pago='$sfecha' WHERE id_factura = '".$sid."' ";
         $consultar = mysqli_query($conectar,$query_update);
 
         return $consultar;

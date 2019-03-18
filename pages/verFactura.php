@@ -27,6 +27,7 @@ include ("includes/header.php");
                             <tr>
                                 <th>N° Documento</th>
                                 <th>Fecha Emisión</th>
+                                <th>Fecha Pago</th>
                                 <th>Tipo</th>
                                 <th>Monto</th>
                                 <th>Detalle</th>
@@ -44,6 +45,9 @@ include ("includes/header.php");
                                 </th>
                                 <th>
                                     <?php echo $datos[$i]["c2"]; ?>
+                                </th>
+                                <th>
+                                <?php echo $datos[$i]["fecha_pago"]; ?>
                                 </th>
                                 <th>
                                     <?php echo $datos[$i]["c3"]; ?>
@@ -64,10 +68,41 @@ include ("includes/header.php");
                                     <?php echo $datos[$i]["c7"]; ?>
                                 </th>
                                 <th>                                    
-                                    <a href="../procesos/pagarFactura.php?id=<?php echo $datos[$i]["id_factura"]; ?>" class="btn btn-xs <?php echo $datos[$i]["respuesta"]; ?>"  name="btn_pagar" type="submit"><?php echo $datos[$i]["pago"]; ?></a>
+                                    <a style="color:white;" class="btn btn-xs <?php echo $datos[$i]["respuesta"]; ?>"  name="btn_pagar" type="submit"  data-toggle="modal" data-target="#myModal<?php echo $datos[$i]["id_factura"]; ?>"><?php echo $datos[$i]["pago"]; ?> </a>
                                     <a href="editarCuentas.php?id=<?php echo $datos[$i]["id"]; ?>" class="btn btn-xs btn-warning">Editar</a>
                                     <a href="" class="btn btn-xs btn-danger">Eliminar</a>
                                 </th>
+                                <!-- Modal -->
+                                <div id="myModal<?php echo $datos[$i]["id_factura"]; ?>" class="modal fade" role="dialog">
+                                <div class="modal-dialog ">
+                                    <!-- Contenido del modal -->
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                        <form action="../procesos/pagarFactura.php" method="POST">
+                                            <div class="col-lg-12 grid-margin stretch-card">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="card-title"> Seleccione fecha de pago </h1> 
+                                                        <div class="form-group">
+                                                            <input type="date" class="form-control" name="pago_factura_dat" id="datepicker" >
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                    <div class="modal-footer">
+                                            <input type="hidden" name="id" value="<?php echo $datos[$i]["id_factura"]; ?>">
+                                            <button type="submit" name="btn-delete" class="btn btn-success">Aceptar</button>          
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
                             </tr>
                             <?php }?>
                             

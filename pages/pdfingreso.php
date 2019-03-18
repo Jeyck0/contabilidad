@@ -56,6 +56,8 @@ $html='
 
     padding-top:-18px;
     padding-left:130px;
+    width:200px;
+    font-size:13px;
 
     
     
@@ -93,6 +95,7 @@ $html='
 
     padding-top:-47px;
     padding-left:555px;
+    font-size:13px;
     
     
     
