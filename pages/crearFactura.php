@@ -54,6 +54,12 @@ include ("includes/header.php");
                                     <option value="14" >PLANILLA</option>
                                     <option value="15" >COMPROBANTE PAGO</option>
                                     <option value="16" >BOLH</option>
+                                    <option value="17" >BHE</option>
+                                    <option value="18" >ODE</option>
+                                    <option value="19" >BPST</option>
+                                    <option value="20" >BPSTE</option>
+                                    <option value="21" >BOLHE</option>
+
                                 </select>
                             </div>     
                             <div class="form-group">
