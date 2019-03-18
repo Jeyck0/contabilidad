@@ -25,7 +25,19 @@ Class CatPadreEgreso {
 
     public function obtenerDatosCatPadreEgreso(){
         $conectar = $this->conectar->conectar();
-        $query ="SELECT * FROM cat_padre_egresos";
+        $query ="SELECT id_padre_egreso,codigo,nombre FROM cat_padre_egresos";
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->catPadreEgreso[] = $dado;
+        }
+
+        return $this->catPadreEgreso;
+    }
+
+    public function obtenerDatosCatPadreEgresoNoSelect($nid){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT id_padre_egreso,codigo,nombre FROM cat_padre_egresos WHERE id_padre_egreso !=$nid";
         $consultar = mysqli_query($conectar,$query);
 
         while($dado = mysqli_fetch_assoc($consultar)){

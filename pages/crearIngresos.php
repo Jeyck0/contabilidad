@@ -2,13 +2,17 @@
 
 require_once ("../clases/Conexion.php");
 require_once ("../clases/Cuenta.php");
-require_once ("../clases/CatIngresos.php");
+require_once ("../clases/CatPadreIngreso.php");
+require_once ("../clases/Ingreso.php");
 
 $cuentas = new Cuenta();
 $datos = $cuentas->obtenerDatosCuenta();
 
-$catIngresos = new CatIngresos();
-$datos2 = $catIngresos->obtenerDatosCatIngresos();
+$catPadre = new CatPadreIngreso();
+$datos2 = $catPadre->obtenerDatosCatPadrIngreso();
+
+$ingreso = new Ingreso();
+$count = $ingreso->contar();
 
 
 include ("includes/header.php");
@@ -20,7 +24,7 @@ include ("includes/header.php");
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Ingresos</h4>
+                    <h1 class="card-title">Número Correlativo <?php echo $count+1;?></h1>
                         <form action="../procesos/crearIngresos.php" class="form-sample" method="POST">
                             <div class="form-group">
                                 <label for="">Seleccionar Cuenta</label>
@@ -32,12 +36,18 @@ include ("includes/header.php");
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Categoria</label>
-                                <select name="select_cat_ingresos" id="" class="form-control">
-                                    <option value="" disabled selected>-- Seleccione --</option>
+                                <label for="">Cuenta General</label>
+                                <select name="select_cat_ingresos_padre"  class="form-control" id="select_cat_ingresos_padre" required>
+                                    <option value="" selected disabled>-- Seleccione --</option>
                                     <?php for($i=0;$i<sizeof($datos2);$i++){?>
-                                        <option value="<?php echo $datos2[$i]["id"];?>"><?php echo $datos2[$i]["nombre"];}?></option>
-                                    <?php?>    
+                                        <option value="<?php echo $datos2[$i]["id_padre_ingreso"];?>"><?php echo $datos2[$i]["codigo"]." | ".$datos2[$i]["nombre"];}?></option>
+                                    <?php?>      
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Sub Cuenta</label>
+                                <select name="select_cat_ingresos" class="form-control" id="select_cat_ingresos" required>
+                                    <option value="" selected disabled>-- Seleccione --</option>   
                                 </select>
                             </div>
                             <div class="form-group">
@@ -59,6 +69,7 @@ include ("includes/header.php");
     </div>
 </div>
 
+<script src="../js/categoriasIngresos.js"></script>
 <?php include ("includes/footer.php");?>
 
 

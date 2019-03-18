@@ -21,4 +21,5 @@ $ingreso = new Ingreso();
 $ingreso->insertarIngresos($select_cuenta_ingresos,$select_cat_ingresos,$monto_ingreso_in,$comentario_ingreso_txt);
 $ingreso->sumar($select_cuenta_ingresos,$monto_ingreso_in);
 
+
 header('Location: ../pages/verIngresos.php'); 

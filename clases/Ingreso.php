@@ -28,7 +28,15 @@ Class Ingreso {
 
     public function obtenerDatosIngresos(){
         $conectar = $this->conectar->conectar();
-        $query ="SELECT i.comentario,i.fecha,i.id,i.monto,c.nombre as cnombre,cat.nombre FROM ingresos i INNER JOIN cuentas c ON i.id_cuenta=c.id INNER JOIN cat_ingresos cat ON i.id_cat_ingresos = cat.id";   
+        $query ="SELECT i.id as c0, `monto`as c4, `id_cuenta`, DATE_FORMAT(fecha, '%d/%m/%Y') as c5, i.id_cat_ingresos, `comentario` as c6 ,c.nombre as c1,ci.nombre as c3,cpi.nombre as c2
+        FROM `ingresos` i
+        INNER JOIN cuentas c
+        ON c.id=id_cuenta
+        INNER JOIN cat_ingresos ci
+        ON i.id_cat_ingresos=ci.id_cat_ingresos
+        INNER JOIN cat_padre_ingresos cpi
+        ON ci.id_cat_padre_ingresos = cpi.id_padre_ingreso
+        ORDER BY i.id ASC";   
         $consultar = mysqli_query($conectar,$query);
 
         while($dado = mysqli_fetch_assoc($consultar)){
@@ -55,6 +63,18 @@ Class Ingreso {
 
         return $update;
 
+    }
+
+    public function contar(){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT COUNT(id) as cid from ingresos";
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $contar = $dado['cid'];
+        }
+
+        return $contar;
     }
 
     

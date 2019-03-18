@@ -69,4 +69,15 @@ Class Cuenta {
 
     }
 
+    public function obtenerDatosCuentaNoSelect($nid){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT * FROM cuentas WHERE id !='$nid' ";
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->cuentas[] = $dado;
+        }
+
+        return $this->cuentas;
+    }
 }

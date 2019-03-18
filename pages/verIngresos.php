@@ -6,11 +6,9 @@ require_once ("../clases/CatIngresos.php");
 require_once ("../clases/Ingreso.php");
 
 
-$cuentas = new Cuenta();
-$datos = $cuentas->obtenerDatosCuenta();
 
 $ingresos = new Ingreso();
-$datos2 = $ingresos->obtenerDatosIngresos();
+$datos = $ingresos->obtenerDatosIngresos();
 
 include ("includes/header.php");
 ?>
@@ -25,23 +23,30 @@ include ("includes/header.php");
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>RBD</th>
+                                <th>Nombre de la institución</th>
+                                <th>Subvencion</th>
                                 <th>Cuenta</th>
-                                <th>Categoria</th>
+                                <th>Sub Cuenta</th>
                                 <th>Monto</th>
-                                <th>Fecha</th>
-                                <th>Glosa</th>
+                                <th>Fecha Emisión</th>
+                                <th>Detalle</th>
+                                <th>Descargar</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php for($i=0;$i<sizeof($datos2);$i++){?>
+                        <?php for($i=0;$i<sizeof($datos);$i++){?>
                             <tr>
-                                <th><?php echo $datos2[$i]["id"]; ?></th>
-                                <th><?php echo $datos2[$i]["cnombre"]; ?></th>
-                                <th><?php echo $datos2[$i]["nombre"]; ?></th>
-                                <th><?php echo $datos2[$i]["monto"]; ?></th>
-                                <th><?php echo $datos2[$i]["fecha"]; ?></th>
-                                <th><?php echo $datos2[$i]["comentario"]; ?></th>
-                                <th></th>
+                                <th><?php echo $datos[$i]["c0"]; ?></th>
+                                <th>7004</th>
+                                <th>Corporacion Educacional San Ignacio de Los Rios</th>
+                                <th><?php echo $datos[$i]["c1"]; ?></th>
+                                <th><?php echo $datos[$i]["c2"]; ?></th>
+                                <th><?php echo $datos[$i]["c3"]; ?></th>
+                                <th><?php echo $datos[$i]["c4"]; ?></th>
+                                <th><?php echo $datos[$i]["c5"]; ?></th>
+                                <th><?php echo $datos[$i]["c6"]; ?></th>
+                                <th><a href="pdfingreso.php?id=<?php echo $datos[$i]["c0"]; ?>" type="submit" name="descargar"><i class="fa-cloud-download">Descargar</i></a></th>
                             </tr>
                         <?php }?>    
                         </tbody>
