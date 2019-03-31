@@ -25,6 +25,7 @@ include ("includes/header.php");
                     <table class="table table-striped table-bordered" >
                         <thead>
                             <tr>
+                                <th>Acciones</th>
                                 <th>N° Documento</th>
                                 <th>Fecha Emisión</th>
                                 <th>Fecha Pago</th>
@@ -34,12 +35,16 @@ include ("includes/header.php");
                                 <th>Estado</th>
                                 <th>Rut</th>
                                 <th>Razón Social</th>
-                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php for($i=0;$i<sizeof($datos);$i++){?>
                             <tr>
+                                <th>                                    
+                                    <a style="color:white;" class="btn btn-xs <?php echo $datos[$i]["respuesta"]; ?>"  name="btn_pagar" type="submit"  data-toggle="modal" data-target="#myModal<?php echo $datos[$i]["id_factura"]; ?>"><?php echo $datos[$i]["pago"]; ?> </a>
+                                    <a href="editarCuentas.php?id=<?php echo $datos[$i]["id"]; ?>" class="btn btn-xs btn-warning">Editar</a>
+                                    <a href="" class="btn btn-xs btn-danger">Eliminar</a>
+                                </th>
                                 <th>
                                     <?php echo $datos[$i]["c1"]; ?>
                                 </th>
@@ -66,11 +71,6 @@ include ("includes/header.php");
                                 </th>
                                 <th>
                                     <?php echo $datos[$i]["c7"]; ?>
-                                </th>
-                                <th>                                    
-                                    <a style="color:white;" class="btn btn-xs <?php echo $datos[$i]["respuesta"]; ?>"  name="btn_pagar" type="submit"  data-toggle="modal" data-target="#myModal<?php echo $datos[$i]["id_factura"]; ?>"><?php echo $datos[$i]["pago"]; ?> </a>
-                                    <a href="editarCuentas.php?id=<?php echo $datos[$i]["id"]; ?>" class="btn btn-xs btn-warning">Editar</a>
-                                    <a href="" class="btn btn-xs btn-danger">Eliminar</a>
                                 </th>
                                 <!-- Modal -->
                                 <div id="myModal<?php echo $datos[$i]["id_factura"]; ?>" class="modal fade" role="dialog">

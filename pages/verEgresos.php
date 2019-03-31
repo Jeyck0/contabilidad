@@ -22,43 +22,25 @@ include ("includes/header.php");
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>RBD</th>
-                                <th>Subvencion</th>
-                                <th>Cuenta</th>
-                                <th>Sub Cuenta</th>
-                                <th>Tipo Documento</th>
-                                <th>Numero Factura</th>
-                                <th>Fecha Emisión</th>
-                                <th>Fecha de Pago</th>
-                                <th>Detalle</th>
-                                <th>Rut Proveedor</th>
-                                <th>Razón Social</th>
-                                <th>Monto</th>
                                 <th>Descargar Egreso</th>
                                 <th>Acciones</th>
+                                <th>Detalle</th>
+                                <th>Razón Social</th>
+                                <th>Monto</th>
                             </tr>
                         </thead>
                         <tbody>
                         <?php for($i=0;$i<sizeof($datos2);$i++){?>
                             <tr>
                                 <th><?php echo $datos2[$i]["m0"]; ?></th>
-                                <th>7004</th>
-                                <th><?php echo $datos2[$i]["m1"]; ?></th>
-                                <th><?php echo $datos2[$i]["m2"]; ?></th>
-                                <th><?php echo $datos2[$i]["m3"]; ?></th>
-                                <th><?php echo $datos2[$i]["m4"]; ?></th>
-                                <th><?php echo $datos2[$i]["m5"]; ?></th>
-                                <th><?php echo $datos2[$i]["m6"]; ?></th>
-                                <th><?php echo $datos2[$i]["m7"]; ?></th>
-                                <th><?php echo $datos2[$i]["m8"]; ?></th>
-                                <th><?php echo $datos2[$i]["m9"]; ?></th>
-                                <th><?php echo $datos2[$i]["m10"]; ?></th>
-                                <th><?php echo $datos2[$i]["m11"]; ?></th>
                                 <th><a href="pdfegreso.php?id=<?php echo $datos2[$i]["m0"]; ?>" type="submit" name="descargar"><i class="fa-cloud-download">Descargar</i></a></th>
                                 <th>
                                     <a href="editarEgreso.php?id=<?php echo $datos2[$i]["m0"]; ?>" class="btn btn-xs btn-warning">Editar</a>
                                     <a href="" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal<?php echo $datos2[$i]["m0"]; ?>" >Eliminar</a>
                                 </th>
+                                <th><?php echo $datos2[$i]["m8"]; ?></th>
+                                <th><?php echo $datos2[$i]["m10"]; ?></th>
+                                <th><?php echo $datos2[$i]["m11"]; ?></th>
                                 <!-- Modal -->
                                 <div id="myModal<?php echo $datos2[$i]["m0"]; ?>" class="modal fade" role="dialog">
                                 <div class="modal-dialog modal-lg">

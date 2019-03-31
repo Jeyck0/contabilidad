@@ -1,5 +1,6 @@
 <?php
 require_once ("Conexion.php");
+header ('Access-Control-Allow-Origin: * ');
 
 Class Ingreso {
     public $ingresos;

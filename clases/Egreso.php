@@ -1,5 +1,6 @@
 <?php
 require_once ("Conexion.php");
+header ('Access-Control-Allow-Origin: * ');
 header("Content-Type: text/html;charset=utf-8");
 
 Class Egreso {
@@ -40,7 +41,7 @@ Class Egreso {
         INNER JOIN facturas f
         ON f.id_factura=e.id_factura
         INNER JOIN proveedores p
-        ON f.id_proveedor = p.id_proveedores ORDER BY e.id ASC";   
+        ON f.id_proveedor = p.id_proveedores ORDER BY e.id DESC";   
         $consultar = mysqli_query($conectar,$query);
 
         while($dado = mysqli_fetch_assoc($consultar)){

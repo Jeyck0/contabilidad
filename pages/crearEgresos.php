@@ -6,6 +6,7 @@ require_once ("../clases/CatEgresos.php");
 require_once ("../clases/CatPadreEgreso.php");
 require_once ("../clases/Factura.php");
 require_once ("../clases/Egreso.php");
+header ('Access-Control-Allow-Origin: * ');
 
 
 
