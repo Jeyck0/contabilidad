@@ -14,7 +14,7 @@ class Conexion {
             echo "error";
         }
         else{
-            echo "OK";
+
         }
 
         return $conectar;

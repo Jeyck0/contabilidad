@@ -131,6 +131,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="../pages/verEgresos.php">Ver</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../pages/exportar_egresos.php">Exportar</a>
+                </li>
               </ul>
             </div>
           </li>
