@@ -18,12 +18,12 @@ echo $select_cuenta_egresos;
 
 
 $egreso = new Egreso();
-$egreso->insertarEgresos($select_cuenta_egresos,$select_cat_egresos,$select_factura_egreso);
+$egreso->insertarEgresosSep($select_cuenta_egresos,$select_cat_egresos,$select_factura_egreso);
 
 $factura = new Factura();
 $factura->aplicarEgreso($select_factura_egreso);
 
 
 
-header('Location: ../pages/verEgresos.php'); 
+//header('Location: ../pages/verEgresos.php'); 
 

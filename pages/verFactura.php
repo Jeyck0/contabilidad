@@ -42,7 +42,7 @@ include ("includes/header.php");
                             <tr>
                                 <th>                                    
                                     <a style="color:white;" class="btn btn-xs <?php echo $datos[$i]["respuesta"]; ?>"  name="btn_pagar" type="submit"  data-toggle="modal" data-target="#myModal<?php echo $datos[$i]["id_factura"]; ?>"><?php echo $datos[$i]["pago"]; ?> </a>
-                                    <a href="editarCuentas.php?id=<?php echo $datos[$i]["id"]; ?>" class="btn btn-xs btn-warning">Editar</a>
+                                    <a href="editarDocumento.php?id=<?php echo $datos[$i]["id_factura"]; ?>" class="btn btn-xs btn-warning">Editar</a>
                                     <a href="" class="btn btn-xs btn-danger">Eliminar</a>
                                 </th>
                                 <th>

@@ -37,7 +37,7 @@ Class Ingreso {
         ON i.id_cat_ingresos=ci.id_cat_ingresos
         INNER JOIN cat_padre_ingresos cpi
         ON ci.id_cat_padre_ingresos = cpi.id_padre_ingreso
-        ORDER BY i.id ASC";   
+        ORDER BY i.id DESC";   
         $consultar = mysqli_query($conectar,$query);
 
         while($dado = mysqli_fetch_assoc($consultar)){

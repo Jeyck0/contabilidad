@@ -7576,9 +7576,10 @@ table {
 caption {
   padding-top: 18px 30px;
   padding-bottom: 18px 30px;
-  color: #c2c2c2;
-  text-align: left;
-  caption-side: bottom; }
+  color: #ffffff;
+  background-color:rgb(32, 104, 240);
+  text-align: center;
+  caption-side: top; }
 
 th {
   text-align: inherit; }
