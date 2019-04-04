@@ -25,5 +25,5 @@ $factura->aplicarEgreso($select_factura_egreso);
 
 
 
-//header('Location: ../pages/verEgresos.php'); 
+header('Location: ../pages/verEgresos.php'); 
 
