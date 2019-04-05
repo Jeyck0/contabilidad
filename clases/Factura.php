@@ -37,7 +37,7 @@ Class Factura {
         FROM facturas f
         INNER JOIN proveedores p
         ON p.id_proveedores = f.id_proveedor
-        ORDER BY estado ASC";
+        ORDER BY estado,id_factura DESC";
         $consultar = mysqli_query($conectar,$query);
 
         while($dado = mysqli_fetch_assoc($consultar)){
