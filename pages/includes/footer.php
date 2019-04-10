@@ -30,6 +30,11 @@
       $('#modalopc').modal("show");
     })
 
+    $("#btn_ingreso").on('click',function(){
+      $('#modalopc2').modal("show");
+    })
+
+
     
   });
 

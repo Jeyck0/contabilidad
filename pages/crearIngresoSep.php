@@ -12,7 +12,7 @@ $catPadre = new CatPadreIngreso();
 $datos2 = $catPadre->obtenerDatosCatPadrIngreso();
 
 $ingreso = new Ingreso();
-$count = $ingreso->contar();
+$count = $ingreso->contarSep();
 
 
 include ("includes/header.php");
@@ -25,11 +25,11 @@ include ("includes/header.php");
                 <div class="card">
                     <div class="card-body">
                     <h1 class="card-title">Número Correlativo <?php echo $count+1;?></h1>
-                        <form action="../procesos/crearIngresos.php" class="form-sample" method="POST">
+                        <form action="../procesos/crearIngresosSep.php" class="form-sample" method="POST">
                             <div class="form-group">
                                 <label for="">Seleccionar Cuenta</label>
                                 <select name="select_cuenta_ingresos" id="" class="form-control">
-                                <option value="2" selected >Banco Chile General</option>   
+                                    <option value="1" selected >Banco Chile SEP</option>
                                 </select>
                             </div>
                             <div class="form-group">
