@@ -46,7 +46,7 @@ $objPHPExcel->setActiveSheetIndex(0)
 
 
 while($row=$consultar->fetch_assoc()){
-    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, "7004");
+    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, "6832");
     $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['c1']);
     $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $row['c2']);
     $objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $row['c3']);
@@ -75,7 +75,7 @@ ORDER BY i.id DESC
 $consultar = mysqli_query($cnn,$sql);
 
 while($row=$consultar->fetch_assoc()){
-    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, "7004");
+    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, "6832");
     $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['c1']);
     $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $row['c2']);
     $objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $row['c3']);
