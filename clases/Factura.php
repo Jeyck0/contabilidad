@@ -1,6 +1,6 @@
 <?php
 require_once ("Conexion.php");
-header ('Access-Control-Allow-Origin: * ');
+
 
 Class Factura {
     public $facturas;
@@ -139,5 +139,30 @@ Class Factura {
 
         return $consultar;
     }
+
+    public function obtenerFactura($fid){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT if(estado = 'PAGADA','Pagada','Pagar') as pago,if(estado = 'PAGADA','btn-primary disabled','btn-success') as respuesta,`id_factura` as id_factura, `id_proveedor`, folio as c1, DATE_FORMAT(fecha_emision, '%Y-%m-%d') as c2, DATE_FORMAT(fecha_pago, '%d/%m/%Y') as fecha_pago, tipo as c3, monto as c4, detalle as c5, estado as c6,p.razon_social as c7,p.rut as c8
+        FROM facturas f
+        INNER JOIN proveedores p
+        ON p.id_proveedores = f.id_proveedor
+        WHERE f.id_factura ='$fid'
+        ORDER BY estado,id_factura DESC";
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->facturas[] = $dado;
+        }
+
+        return $this->facturas;
+    }
+
+    public function editarFactura($proveedor_e,$folio_e,$fecha_e,$tipo_e,$monto_e,$detalle_e,$fid){
+        $conectar = $this->conectar->conectar();
+        $query ="UPDATE `facturas` SET `id_proveedor`='$proveedor_e',`folio`='$folio_e',`fecha_emision`='$fecha_e',`tipo`='$tipo_e',`monto`='$monto_e',`detalle`='$detalle_e' WHERE id_factura = '$fid'";
+        $consultar = mysqli_query($conectar,$query);
+        return $consultar;
+    }
+
 
 }

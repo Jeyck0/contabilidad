@@ -27,7 +27,7 @@
   $(function(){
     
     $("#btn_egreso").on('click',function(){
-      $('#modalopc').modal("show");
+      $('#modalopci').modal("show");
     })
 
     $("#btn_ingreso").on('click',function(){

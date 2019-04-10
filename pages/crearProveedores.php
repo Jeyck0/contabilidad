@@ -24,41 +24,6 @@ include ("includes/header.php");
                                 <input type="text" class="form-control" name="giro_proveedor_in">
                             </div>
                             <div class="form-group">
-                                <label for="">Direccion</label>
-                                <input type="text" class="form-control" name="direccion_proveedor_in">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Región</label>
-                                <select class="seleccion form-control" name="cosa" onchange="cambia()">
-                                        <option value="0" selected="selected">Regiones</option>
-                                        <option value="1">Tarapaca</option>
-                                        <option value="2">Antofagasta</option>
-                                        <option value="3">Atacama</option>
-                                        <option value="4">Coquimbo</option>
-                                        <option value="5">Valparaiso</option>
-                                        <option value="6">O'Higgins</option>
-                                        <option value="7">Maule</option>
-                                        <option value="8">Bio - Bio</option>
-                                        <option value="9">Araucania</option>
-                                        <option value="10">Los Lagos</option>
-                                        <option value="11">Aisen</option>
-                                        <option value="12">Magallanes Y Antartica</option>
-                                        <option value="13">Metropolitana</option>
-                                        <option value="14">Los Rios</option>
-                                        <option value="15">Arica y Parinacota</option>
-                                    </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Comuna</label>
-                                <select class="seleccion form-control" name="opt">
-                                    <option value="0">Comuna</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Teléfono</label>
-                                <input type="text" class="form-control" name="Telefono_proveedor_in">
-                            </div>
-                            <div class="form-group">
                                 <button type="submit" class="btn btn-success mr-2" name="crear_proveedor_btn_aceptar">Aceptar</button>
                             </div>
                         </form>

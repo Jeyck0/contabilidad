@@ -2,7 +2,6 @@
 
 require_once ("../clases/Proveedor.php");
 
-$id= $_GET['id'];
 
 $proveedor = new Proveedor();
 $datos = $proveedor->obtenerDatosProveedor();
@@ -17,7 +16,7 @@ include ("includes/header.php");
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Agregar Documento <?php echo $id?></h4>
+                        <h4 class="card-title">Agregar Documento </h4>
                         <form action="../procesos/crearFactura.php" class="form-sample" method="POST">
                             <div class="form-group">
                                 <label for="">Folio</label>
@@ -66,7 +65,7 @@ include ("includes/header.php");
                             </div>     
                             <div class="form-group">
                                 <label for="">Monto</label>
-                                <input type="text" class="form-control" name="monto_factura_in">
+                                <input type="number" class="form-control" name="monto_factura_in">
                             </div>
                             <div class="form-group">
                                 <label for="">Detalle</label>

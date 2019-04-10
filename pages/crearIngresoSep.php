@@ -53,7 +53,7 @@ include ("includes/header.php");
                             </div>
                             <div class="form-group">
                                 <label for="">Monto</label>
-                                <input type="text" class="form-control" name="monto_ingreso_in">
+                                <input type="number" class="form-control" name="monto_ingreso_in">
                             </div>
                             <div class="form-group">
                                 <label for="">Glosa</label>

@@ -23,12 +23,11 @@ include ("includes/header.php");
                     <option value="2" selected>General</option>
                 </select>
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="t-general">
+                    <table class="table table-striped table-bordered"   id="t-general">
                         <caption>Egresos General</caption>
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Descargar Egreso</th>
                                 <th>Acciones</th>
                                 <th>Detalle</th>
                                 <th>Razón Social</th>
@@ -39,8 +38,8 @@ include ("includes/header.php");
                         <?php for($i=0;$i<sizeof($datos2);$i++){?>
                             <tr>
                                 <th><?php echo $datos2[$i]["m0"]; ?></th>
-                                <th><a href="pdfegreso.php?id=<?php echo $datos2[$i]["m0"]; ?>" type="submit" name="descargar"><i class="fa-cloud-download">Descargar</i></a></th>
                                 <th>
+                                    <a href="pdfegreso.php?id=<?php echo $datos2[$i]["m0"]; ?>" type="submit" name="descargar" class="btn btn-xs btn-success">Descargar PDF</a>
                                     <a href="editarEgreso.php?id=<?php echo $datos2[$i]["m0"]; ?>" class="btn btn-xs btn-warning">Editar</a>
                                     <a href="" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal<?php echo $datos2[$i]["m0"]; ?>" >Eliminar</a>
                                 </th>
@@ -81,12 +80,11 @@ include ("includes/header.php");
                         <?php }?>    
                         </tbody>
                     </table>
-                    <table class="table table-bordered" id="t-sep" >
+                    <table class="table table-striped table-bordered" id="t-sep" >
                     <caption>Egresos SEP</caption>
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Descargar Egreso</th>
                                 <th>Acciones</th>
                                 <th>Detalle</th>
                                 <th>Razón Social</th>
@@ -97,8 +95,8 @@ include ("includes/header.php");
                         <?php for($i=0;$i<sizeof($datos3);$i++){?>
                             <tr>
                                 <th><?php echo $datos3[$i]["m0"]; ?></th>
-                                <th><a href="pdfegresosep.php?id=<?php echo $datos3[$i]["m0"]; ?>" type="submit" name="descargar"><i class="fa-cloud-download">Descargar</i></a></th>
                                 <th>
+                                    <a href="pdfegresosep.php?id=<?php echo $datos3[$i]["m0"]; ?>" type="submit" name="descargar" class="btn btn-xs btn-success">Descargar PDF</a>
                                     <a href="editarEgreso.php?id=<?php echo $datos3[$i]["m0"]; ?>" class="btn btn-xs btn-warning">Editar</a>
                                     <a href="" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal<?php echo $datos3[$i]["m0"]; ?>" >Eliminar</a>
                                 </th>

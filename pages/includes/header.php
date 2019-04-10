@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
@@ -50,26 +51,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="menu-icon mdi mdi-content-copy"></i>
-              <span class="menu-title">Cuentas Banco</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/crearCuenta.php">Crear</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/verCuentas.php">Ver</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#facturas" aria-expanded="false" aria-controls="facturas">
-              <i class="menu-icon mdi mdi-content-copy"></i>
-              <span class="menu-title">Documentos</span>
+              <i class="menu-icon fas fa-file-alt"></i>
+              <span class="menu-title">Documentos</span> 
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="facturas">
@@ -85,7 +69,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#proveedores" aria-expanded="false" aria-controls="proveedores">
-              <i class="menu-icon mdi mdi-content-copy"></i>
+              <i class="menu-icon fas fa-user-tie"></i> 
               <span class="menu-title">Proveedores / Personas</span>
               <i class="menu-arrow"></i>
             </a>
@@ -102,8 +86,8 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ingresos" aria-expanded="false" aria-controls="ingresos">
-              <i class="menu-icon mdi mdi-content-copy"></i>
-              <span class="menu-title">Ingresos</span>
+              <i class="menu-icon fas fas fa-indent"></i> 
+              <span class="menu-title">Ingresos</span> 
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ingresos">
@@ -122,7 +106,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#egresos" aria-expanded="false" aria-controls="egresos">
-              <i class="menu-icon mdi mdi-content-copy"></i>
+              <i class="menu-icon fas fas fa-outdent"></i> 
               <span class="menu-title">Egresos</span>
               <i class="menu-arrow"></i>
             </a>
@@ -147,7 +131,7 @@
         <div class="content-wrapper">
 
          <!-- Modal -->
-          <div id="modalopc" class="modal fade" role="dialog">
+          <div id="modalopci" class="modal fade" role="dialog">
             <div class="modal-dialog ">
               <!-- Contenido del modal -->
               <div class="modal-content">
@@ -161,7 +145,7 @@
                       <div class="col-12 text-center pt-3"><a href="../pages/crearEgresos.php" class="btn btn-outline-success btn-lg btn-block">General</a></div>
                     </div>
                     <div class="row">
-                    <div class="col-12 text-center pt-3"><a href="../pages/crearEgresosSep.php" class="btn btn-outline-info btn-lg btn-block">SEP</a></div>
+                    <div class="col-12 text-center pt-3"><a href="../pages/crearEgresosSep.php" class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
                     </div>
                   </div>
                 </div>
@@ -185,7 +169,7 @@
             <div class="col-12 text-center pt-3"><a href="../pages/crearIngresos.php" class="btn btn-outline-success btn-lg btn-block">General</a></div>
             </div>
             <div class="row">
-            <div class="col-12 text-center pt-3"><a href="../pages/crearIngresoSep.php" class="btn btn-outline-info btn-lg btn-block">SEP</a></div>
+            <div class="col-12 text-center pt-3"><a href="../pages/crearIngresoSep.php" class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
           </div>
         </div>
       </div>

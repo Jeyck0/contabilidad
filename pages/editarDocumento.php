@@ -1,9 +1,25 @@
 <?php
 
 require_once ("../clases/Proveedor.php");
+require_once ("../clases/Factura.php");
 
+
+$id= $_GET['id'];
 $proveedor = new Proveedor();
 $datos = $proveedor->obtenerDatosProveedor();
+
+$factura = new Factura();
+$datos2 = $factura->obtenerFactura($id);
+for($i=0;$i<sizeof($datos2);$i++){
+    $folio = $datos2[$i]['c1'];
+    $id_proveedor = $datos2[$i]['id_proveedor'];
+    $nombre_proveedor = $datos2[$i]['c7'];
+    $fecha_emision = $datos2[$i]['c2'];
+    $tipo_documento = $datos2[$i]['c3'];
+    $monto = $datos2[$i]['c4'];
+    $detalle = $datos2[$i]['c5'];
+
+}
 
 include ("includes/header.php");
 ?>
@@ -15,16 +31,17 @@ include ("includes/header.php");
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Agregar Documento</h4>
-                        <form action="../procesos/crearFactura.php" class="form-sample" method="POST">
+                        <h4 class="card-title">Editar Documento</h4>
+                        <form action="../procesos/editarDocumento.php" class="form-sample" method="POST">                     
                             <div class="form-group">
+                                <input type="text" name="id" value="<?php echo $id;?>" hidden>
                                 <label for="">Folio</label>
-                                <input type="text" class="form-control" name="folio_factura_in">
+                                <input type="text" class="form-control" name="folio_factura_in" value="<?php echo $folio?>"> 
                             </div>
                             <div class="form-group">
                                 <label for="">Seleccionar proveedor</label>
                                 <select name="select_proveedor_facturas" id="" class="form-control">
-                                    <option value="" disabled selected>-- Seleccione --</option>
+                                    <option value="<?php echo $id_proveedor?>"  selected><?php echo $nombre_proveedor?></option>
                                     <?php for($i=0;$i<sizeof($datos);$i++){?>
                                         <option value="<?php echo $datos[$i]["id_proveedores"];?>"><?php echo $datos[$i]["razon_social"];}?></option>
                                     <?php?>    
@@ -32,12 +49,12 @@ include ("includes/header.php");
                             </div>
                             <div class="form-group">
                                 <label for="">Fecha de Emisión</label>
-                                <input type="date" class="form-control" name="emision_factura_dat" id="datepicker">
+                                <input type="date" class="form-control" name="emision_factura_dat" id="datepicker" value="<?php echo $fecha_emision?>">
                             </div> 
                             <div class="form-group">
                                 <label for="">Tipo</label>
                                 <select name="select_tipo_facturas" id="" class="form-control">
-                                    <option value="" disabled selected>-- Seleccione --</option>
+                                    <option value="<?php echo $tipo_documento?>" selected><?php echo $tipo_documento?></option>
                                     <option value="1" >BOL</option>
                                     <option value="2" >BOLE</option>
                                     <option value="3" >FAC</option>
@@ -64,11 +81,11 @@ include ("includes/header.php");
                             </div>     
                             <div class="form-group">
                                 <label for="">Monto</label>
-                                <input type="text" class="form-control" name="monto_factura_in">
+                                <input type="number" class="form-control" name="monto_factura_in" value="<?php echo $monto?>">
                             </div>
                             <div class="form-group">
                                 <label for="">Detalle</label>
-                                <textarea type="text-field" class="form-control" name="detalle_factura_txt"></textarea>
+                                <textarea type="text-field" class="form-control" name="detalle_factura_txt"><?php echo $detalle?></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success mr-2" name="crear_factura_btn_aceptar">Aceptar</button>

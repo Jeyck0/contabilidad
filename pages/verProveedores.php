@@ -20,9 +20,7 @@ include ("includes/header.php");
                                 <th>Rut</th>
                                 <th>Razón Social</th>
                                 <th>Giro</th>
-                                <th>Dirección</th>
-                                <th>Teléfono</th>
-                                <th>Ciudad</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,15 +34,6 @@ include ("includes/header.php");
                                 </th>
                                 <th>
                                     <?php echo $datos[$i]["giro"]; ?>
-                                </th>
-                                <th>
-                                    <?php echo $datos[$i]["direccion"]; ?>
-                                </th>
-                                <th>
-                                    <?php echo $datos[$i]["telefono"]; ?>
-                                </th>
-                                <th>
-                                    <?php echo $datos[$i]["comuna"]; ?>
                                 </th>
                                 <th>
 
