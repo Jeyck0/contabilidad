@@ -1,0 +1,113 @@
+[33mcommit bec99fd07512930f7978f60305dac551a502adc5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Wed Apr 10 14:02:52 2019 -0400
+
+    mejoras visuales
+
+[33mcommit af843fde1ec5dcf7e474c7fd2a1c1270365b3529[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Wed Apr 10 09:38:03 2019 -0400
+
+    corregido RBD
+
+[33mcommit de733f1043de8ca1210005a8c51ea3b0da56a388[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Wed Apr 10 08:59:19 2019 -0400
+
+    se agrega sep y exportacion a ingresos
+
+[33mcommit 7775266f898614f6c3b44f63ca1d484a4c470bf5[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Thu Apr 4 21:55:58 2019 -0300
+
+    fix
+
+[33mcommit 4adffea6dc0e5822e5455edcb2d8950ec110ca20[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Thu Apr 4 16:10:08 2019 -0300
+
+    corregido redirect
+
+[33mcommit 7f61cf652d5c12a557e1176fb0ae66d35abf556f[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Thu Apr 4 15:52:48 2019 -0300
+
+    actualizacion egresos sep
+
+[33mcommit d3883f7f843075f46cf1e84530b04edacccf8cd5[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Tue Apr 2 23:06:55 2019 -0300
+
+    se agrega exportacion excel
+
+[33mcommit a86dfa93d754fe91b7d10b1e76543b81491c48ad[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Sun Mar 31 20:45:41 2019 -0300
+
+    corregido order by
+
+[33mcommit d12c8d89b476f69b636239166ea974c0a4f96de4[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Mon Mar 18 18:04:23 2019 -0300
+
+    se fecha factura a eleccion
+
+[33mcommit 8434be5766f244beac49bc3a3588ae59a856076e[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Mon Mar 18 14:09:35 2019 -0300
+
+    agregados tipos de doc
+
+[33mcommit e256c08ab3e7b939995b8031b9e8f066b40d6aa3[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Mon Mar 18 13:25:39 2019 -0300
+
+    beta produccion
+
+[33mcommit 312978ddce37d56c4f652bd3681089ba7d53c47f[m
+Author: edurikelm <riquelme.mayorga@gmail.com>
+Date:   Fri Feb 22 23:43:12 2019 -0300
+
+    Editar cuentas
+
+[33mcommit a99013545a1f5a36e52c38bdd67f157d3f292838[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Fri Feb 22 23:35:44 2019 -0300
+
+    antes de mostrar
+
+[33mcommit e9723c97e1b09d8cf2db867919ad69156cd62879[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Fri Feb 22 20:09:17 2019 -0300
+
+    ingresos y egresos
+
+[33mcommit 3857da303371be9bb7a0baf3d6a832ab13cea128[m
+Author: edurikelm <riquelme.mayorga@gmail.com>
+Date:   Tue Feb 12 23:57:14 2019 -0300
+
+    challa
+
+[33mcommit 0515b87b07f3d7a846547de3febc3a3f1e0b0614[m
+Author: edurikelm <riquelme.mayorga@gmail.com>
+Date:   Tue Feb 12 23:13:31 2019 -0300
+
+    link cuentas y pagina nuevaCuenta
+
+[33mcommit 46747352a0b4de5989b611197bfe0f4eff98d8fb[m
+Author: edurikelm <riquelme.mayorga@gmail.com>
+Date:   Tue Feb 12 22:32:06 2019 -0300
+
+    arreglos interfaz
+
+[33mcommit d7edf4f25e8fb05376bee50d372449624327eb83[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Tue Feb 12 22:12:06 2019 -0300
+
+    prueba
+
+[33mcommit 9176038cee7cc7b0a88d267b2e279f70a83c1932[m
+Author: Jeyck0 <obrequel337@gmail.com>
+Date:   Tue Feb 12 21:55:05 2019 -0300
+
+    primer commit
