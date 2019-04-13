@@ -10,7 +10,7 @@ $(function(){
         var getUrl = window.location;
         var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
         //alert(baseUrl+"/js/ajaxData.php");
-        
+        //esto es test
         if(padreID){
             $.ajax({
                 url:baseUrl+"/js/ajaxData.php",
