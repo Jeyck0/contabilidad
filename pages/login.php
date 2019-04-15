@@ -41,16 +41,16 @@
                   </div>
                   <form class="user" method="POST" action="../procesos/login.php">
                     <div class="form-group">
-                      <input type="text" name="rut_in" class="form-control " id="rut_in"  placeholder="Usuario" required>
+                      <input type="text" name="usuario_in" class="form-control " id="rut_in"  placeholder="Usuario" required>
                     </div>
                     <div class="form-group">
-                      <input type="password" name="rut_in" class="form-control " id="rut_in"  placeholder="Password" required>
+                      <input type="password" name="password_in" class="form-control " id="rut_in"  placeholder="Password" required>
                     </div>
                     <div class="form-group">
-                      <select class="form-control  " required>
+                      <select name="select_colegio" class="form-control  " required>
                         <option selected disabled >--Seleccionar Colegio--</option>
-                        <option>Maria Auxiliadora</option>
-                        <option>Laura Vicuña</option>
+                        <option value='1'>Maria Auxiliadora</option>
+                        <option value='2'>Laura Vicuña</option>
                       </select>
                     </div>
                     <button type="submit" id="btn_login" class="btn btn-primary btn-user btn-block" name="btn_login">
