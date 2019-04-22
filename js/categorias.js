@@ -14,6 +14,9 @@ $(function(){
         if(padreID){
             $.ajax({
                 url:baseUrl+"/js/ajaxData.php",
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                  },
                 method:"POST",
                 data: 'padre_id='+padreID,
                 error: function(request, errorcode, errortext){
