@@ -60,7 +60,7 @@ include ("includes/header.php");
                                     <option value="19" >BPST</option>
                                     <option value="20" >BPSTE</option>
                                     <option value="21" >BOLHE</option>
-                                    <option value="22" >CHEQUE</option>
+                                    <option value="23" >CHEQUE</option>
 
                                 </select>
                             </div>     
