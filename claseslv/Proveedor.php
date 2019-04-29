@@ -1,6 +1,6 @@
 <?php
 require_once ("Conexion.php");
-header ('Access-Control-Allow-Origin: * ');
+
 
 Class Proveedor {
     public $id;
@@ -74,6 +74,18 @@ Class Proveedor {
 
         return $consultar;
 
+    }
+
+    public function obtenerDatosProveedorId($idp){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT * FROM proveedores where id_proveedores='$idp' order by razon_social ASC";
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->proveedores[] = $dado;
+        }
+
+        return $this->proveedores;
     }
 
 }

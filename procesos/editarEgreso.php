@@ -1,6 +1,6 @@
 <?php
 
-require_once ("../clases/Egreso.php");
+require_once ("../claseslv/Egreso.php");
 
 if(isset($_POST['crear_egreso_btn_aceptar'])){
 
@@ -17,6 +17,6 @@ $egreso->updateEgreso($id,$select_cuenta_egresos,$select_cat_egresos,$select_fac
 
 
 
-header('Location: ../pages/verEgresos.php'); 
+header('Location: ../pageslv/verEgresos.php'); 
 
     

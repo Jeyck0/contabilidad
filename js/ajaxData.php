@@ -1,7 +1,7 @@
 <?php
 
-require_once ('../clases/Conexion.php');
-header ('Access-Control-Allow-Origin: * ');
+require_once ('../claseslv/Conexion.php');
+
 
 $conexion = new Conexion();
 $cnn =$conexion->conectar();

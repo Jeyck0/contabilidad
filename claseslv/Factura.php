@@ -161,6 +161,8 @@ Class Factura {
         $conectar = $this->conectar->conectar();
         $query ="UPDATE `facturas` SET `id_proveedor`='$proveedor_e',`folio`='$folio_e',`fecha_emision`='$fecha_e',`tipo`='$tipo_e',`monto`='$monto_e',`detalle`='$detalle_e' WHERE id_factura = '$fid'";
         $consultar = mysqli_query($conectar,$query);
+
+    
         return $consultar;
     }
 

@@ -1,7 +1,7 @@
 <?php
 
-require_once ("../clases/Egreso.php");
-require_once ("../clases/Factura.php");
+require_once ("../claseslv/Egreso.php");
+require_once ("../claseslv/Factura.php");
 
 if(isset($_POST["crear_egreso_btn_aceptar"])){
 
@@ -25,5 +25,5 @@ $factura->aplicarEgreso($select_factura_egreso);
 
 
 
-header('Location: ../pages/verEgresos.php'); 
+header('Location: ../pageslv/verEgresos.php'); 
 
