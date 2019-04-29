@@ -1,6 +1,6 @@
 <?php
 require_once ("Conexion.php");
-header ('Access-Control-Allow-Origin: * ');
+
 
 Class Cuenta {
     public $cuentas;
@@ -49,17 +49,7 @@ Class Cuenta {
         return $nombre;
     }
 
-    public function obtenerCapitalId($id_datos_cuenta){
-        $conectar = $this->conectar->conectar();
-        $query ="SELECT capital FROM cuentas WHERE id='$id_datos_cuenta'";
-        $consultar = mysqli_query($conectar,$query);
-
-        while($dado = mysqli_fetch_assoc($consultar)){
-            $capital = $dado['capital'];
-        }
-
-        return $capital;
-    }
+ 
 
     public function actualizarDatosCuenta($nombre, $capital, $id_cuenta){
         $conectar = $this->conectar->conectar();

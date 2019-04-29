@@ -76,10 +76,10 @@
             <div class="collapse" id="proveedores">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="../pages/crearProveedores.php">Agregar</a>
+                  <a class="nav-link" href="../pageslv/crearProveedores.php">Agregar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../pages/verProveedores.php">Ver</a>
+                  <a class="nav-link" href="../pageslv/verProveedores.php">Ver</a>
                 </li>
               </ul>
             </div>
@@ -96,10 +96,10 @@
                   <a class="nav-link" id="btn_ingreso" style="cursor:pointer;">Crear</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../pages/verIngresos.php">Ver</a>
+                  <a class="nav-link" href="../pageslv/verIngresos.php">Ver</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../pages/exportar_ingresos.php">Exportar</a>
+                  <a class="nav-link" href="../pageslv/exportar_ingresos.php">Exportar</a>
                 </li>
               </ul>
             </div>
@@ -116,10 +116,10 @@
                   <a class="nav-link" id="btn_egreso" style="cursor:pointer;">Crear</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../pages/verEgresos.php">Ver</a>
+                  <a class="nav-link" href="../pageslv/verEgresos.php">Ver</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../pages/exportar_egresos.php">Exportar</a>
+                  <a class="nav-link" href="../pageslv/exportar_egresos.php">Exportar</a>
                 </li>
               </ul>
             </div>
@@ -142,10 +142,10 @@
                   <h3 class="text-center"> Por Favor escoja la cuenta :</h3>
                   <div class="container">
                     <div class="row">
-                      <div class="col-12 text-center pt-3"><a href="../pages/crearEgresos.php" class="btn btn-outline-success btn-lg btn-block">General</a></div>
+                      <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresos.php" class="btn btn-outline-success btn-lg btn-block">General</a></div>
                     </div>
                     <div class="row">
-                    <div class="col-12 text-center pt-3"><a href="../pages/crearEgresosSep.php" class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
+                    <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresosSep.php" class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
                     </div>
                   </div>
                 </div>
@@ -166,10 +166,10 @@
         <h3 class="text-center"> Por Favor escoja la cuenta :</h3>
           <div class="container">
             <div class="row">
-            <div class="col-12 text-center pt-3"><a href="../pages/crearIngresos.php" class="btn btn-outline-success btn-lg btn-block">General</a></div>
+            <div class="col-12 text-center pt-3"><a href="../pageslv/crearIngresos.php" class="btn btn-outline-success btn-lg btn-block">General</a></div>
             </div>
             <div class="row">
-            <div class="col-12 text-center pt-3"><a href="../pages/crearIngresoSep.php" class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
+            <div class="col-12 text-center pt-3"><a href="../pageslv/crearIngresoSep.php" class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
           </div>
         </div>
       </div>
