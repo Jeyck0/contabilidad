@@ -38,7 +38,7 @@ include ("includes/header.php");
                                 <th>
 
                                     
-                                    <a href="editarCuentas.php?id=<?php echo $datos[$i]["id"]; ?>" class="btn btn-xs btn-warning">Editar</a>
+                                    <a href="editarProveedor.php?id=<?php echo $datos[$i]["id_proveedores"]; ?>" class="btn btn-xs btn-warning">Editar</a>
                                     <a href="" class="btn btn-xs btn-danger">Eliminar</a>
                                    
                                 </th>
