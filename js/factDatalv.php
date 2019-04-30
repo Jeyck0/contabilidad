@@ -1,6 +1,6 @@
 <?php
 
-require_once ('../clases/Conexion.php');
+require_once ('../claseslv/Conexion.php');
 
 $conexion = new Conexion();
 $cnn =$conexion->conectar();

@@ -1,5 +1,5 @@
 <?php
-require_once ('../clases/Conexion.php');
+require_once ('../claseslv/Conexion.php');
 require_once ('../phpexcel/PHPExcel.php');
 
 if(isset($_POST['generar_reporte'])){   

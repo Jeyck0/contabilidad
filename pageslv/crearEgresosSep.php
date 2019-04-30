@@ -24,7 +24,7 @@ $facturas = new Factura();
 $datos4 = $facturas->obtenerFacturasPagadas();
 
 $egreso = new Egreso();
-$count = $egreso->contar();
+$count = $egreso->contarSep();
 
 
 
@@ -40,11 +40,11 @@ include ("includes/header.php");
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">Número Correlativo <?php echo $count+1;?></h1>
-                        <form action="../procesoslv/crearEgresos.php" class="form-sample" method="POST">
+                        <form action="../procesoslv/crearEgresosSep.php" class="form-sample" method="POST">
                             <div class="form-group">
                                 <label for="">Seleccionar Cuenta Banco</label>
                                 <select name="select_cuenta_egresos"  class="form-control" >
-                                    <option value="2" selected >Banco Chile General</option>
+                                    <option value="1" selected >Banco Chile SEP</option>
                                 </select>
                             </div>
                             <div class="form-group">
