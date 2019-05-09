@@ -1,7 +1,7 @@
 <?php
 
-require_once ("../clases/Conexion.php");
-require_once ("../clases/Ingreso.php");
+require_once ("../claseslv/Conexion.php");
+require_once ("../claseslv/Ingreso.php");
 
 if(isset($_POST["crear_ingreso_btn_aceptar"])){
 
@@ -25,4 +25,4 @@ $ingreso->insertarIngresosSep($select_cuenta_ingresos,$select_cat_ingresos,$mont
 $ingreso->sumar($select_cuenta_ingresos,$monto_ingreso_in);
 
 
- header('Location: ../pages/verIngresos.php'); 
+ header('Location: ../pageslv/verIngresos.php'); 

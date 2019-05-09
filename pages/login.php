@@ -47,8 +47,8 @@
                       <input type="password" name="password_in" class="form-control " id="rut_in"  placeholder="Password" required>
                     </div>
                     <div class="form-group">
-                      <select name="select_colegio" class="form-control  " required>
-                        <option selected disabled >--Seleccionar Colegio--</option>
+                      <select name="select_colegio" class="form-control" required>
+                        <option selected disabled value=''>--Seleccionar Colegio--</option>
                         <option value='1'>Maria Auxiliadora</option>
                         <option value='2'>Laura Vicuña</option>
                       </select>

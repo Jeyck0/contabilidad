@@ -1,5 +1,5 @@
 <?php
-require_once ('../clases/Conexion.php');
+require_once ('../claseslv/Conexion.php');
 require_once ('../phpexcel/PHPExcel.php');
 
 if(isset($_POST['generar_reporte'])){   
@@ -46,7 +46,7 @@ $objPHPExcel->setActiveSheetIndex(0)
 
 
 while($row=$consultar->fetch_assoc()){
-    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, "6832");
+    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, "22226-7");
     $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['c1']);
     $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $row['c2']);
     $objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $row['c3']);

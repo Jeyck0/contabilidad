@@ -112,7 +112,7 @@ function tabla($s_id){
     $conectar =$conexion->conectar();
 
 	$query ="SELECT i.id as c0, `monto`as c4, `id_cuenta`, DATE_FORMAT(fecha, '%d/%m/%Y') as c5, i.id_cat_ingresos, `comentario` as c6 ,c.nombre as c1,ci.nombre as c3,ci.codigo as cod2,cpi.codigo as cod1,cpi.nombre as c2
-    FROM `ingresos` i
+    FROM `ingresos_sep` i
     INNER JOIN cuentas c
     ON c.id=id_cuenta
     INNER JOIN cat_ingresos ci
@@ -156,7 +156,7 @@ $html.=(tabla($id));
 
 $mpdf = new mPDF('c','A4');
 $mpdf->SetImportUse();
-$mpdf->SetDocTemplate('../images/comprobante_ingreso_lv.pdf',true);
+$mpdf->SetDocTemplate('../images/comprobante_ingreso.pdf',true);
 $html = mb_convert_encoding($html, 'UTF-8', 'UTF-8');
 $mpdf->allow_charset_conversion=true;
 $mpdf->charset_in='UTF-8';

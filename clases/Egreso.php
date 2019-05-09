@@ -193,4 +193,27 @@ Class Egreso {
         return $this->egresos_sep;
     }
 
+    public function obtenerDatosEgresosPie(){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT e.id_egreso as m0, `id_cuenta`, e.id_cat_egresos, e.id_factura, DATE_FORMAT(fecha, '%d/%m/%Y'),c.nombre as m1,subcat.nombre as m3,catp.nombre as m2,f.folio as m5,DATE_FORMAT(f.fecha_emision, '%d/%m/%Y') as m6,f.fecha_pago as m7,f.tipo as m4,f.monto as m11,f.detalle as m8,p.rut as m9,p.razon_social as m10
+        FROM `egresos_sep` e 
+        INNER JOIN cuentas c 
+        ON e.id_cuenta = c.id 
+        INNER JOIN cat_egresos subcat
+        ON subcat.id_cat_egreso= e.id_cat_egresos
+        INNER JOIN cat_padre_egresos catp
+        ON subcat.id_cat_padre_egresos = catp.id_padre_egreso
+        INNER JOIN facturas f
+        ON f.id_factura=e.id_factura
+        INNER JOIN proveedores p
+        ON f.id_proveedor = p.id_proveedores ORDER BY e.id_egreso DESC";   
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->egresos_sep[] = $dado;
+        }
+
+        return $this->egresos_sep;
+    }
+
 }

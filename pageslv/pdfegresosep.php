@@ -113,8 +113,8 @@ function tabla($s_id){
 	$conexion = new Conexion();
     $conectar =$conexion->conectar();
 
-	$query ="SELECT e.id as m0, `id_cuenta`, e.id_cat_egresos, e.id_factura, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha ,c.nombre as m1,subcat.nombre as m3,subcat.codigo as cod2,catp.codigo as cod1,catp.nombre as m2,f.folio as m5,f.fecha_emision as m6,DATE_FORMAT(fecha_pago, '%d/%m/%Y') as m7,f.tipo as m4,f.monto as m11,f.detalle as m8,p.rut as m9,p.razon_social as m10
-        FROM `egresos` e 
+	$query ="SELECT e.id_egreso as m0, `id_cuenta`, e.id_cat_egresos, e.id_factura, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha ,c.nombre as m1,subcat.nombre as m3,subcat.codigo as cod2,catp.codigo as cod1,catp.nombre as m2,f.folio as m5,f.fecha_emision as m6,DATE_FORMAT(fecha_pago, '%d/%m/%Y') as m7,f.tipo as m4,f.monto as m11,f.detalle as m8,p.rut as m9,p.razon_social as m10
+        FROM `egresos_sep` e 
         INNER JOIN cuentas c 
         ON e.id_cuenta = c.id 
         INNER JOIN cat_egresos subcat
@@ -124,7 +124,7 @@ function tabla($s_id){
         INNER JOIN facturas f
         ON f.id_factura=e.id_factura
         INNER JOIN proveedores p
-        ON f.id_proveedor = p.id_proveedores WHERE e.id='$s_id' ORDER BY e.id ASC";
+        ON f.id_proveedor = p.id_proveedores WHERE e.id_egreso='$s_id' ORDER BY e.id_egreso ASC";
 
     $consultar = mysqli_query($conectar,$query);
 

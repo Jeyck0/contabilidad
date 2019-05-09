@@ -147,6 +147,9 @@
                     <div class="row">
                     <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresosSep.php" class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
                     </div>
+                    <div class="row">
+                    <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresosPie.php" class="btn btn-outline-info btn-lg btn-block">PIE</a></div>
+                    </div>
                   </div>
                 </div>
                 <div class="modal-footer">
