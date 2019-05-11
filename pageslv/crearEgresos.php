@@ -26,6 +26,11 @@ $datos4 = $facturas->obtenerFacturasPagadas();
 $egreso = new Egreso();
 $count = $egreso->contar();
 
+$catEgresosId = new CatEgresos();
+$datos5 = $catEgresosId->obtenerDatosCatEgresosId(1);
+
+// var_dump($datos5);
+// echo $datos3['id_cat_padre_egresos'];
 
 
 
@@ -53,7 +58,6 @@ include ("includes/header.php");
                                     <option value="" selected disabled>-- Seleccione --</option>
                                     <?php for($i=0;$i<sizeof($datos3);$i++){?>
                                         <option value="<?php echo $datos3[$i]["id_padre_egreso"];?>"><?php echo $datos3[$i]["codigo"]." | ".$datos3[$i]["nombre"];}?></option>
-                                    <?php?>      
                                 </select>
                             </div>
                             <div class="form-group">

@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.addons.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
@@ -27,14 +28,15 @@
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
         <a href="../index.html">
-          <img src="../images/logo.png" alt="logo" width="50" height="50"/>
+          <img src="../images/logo.png" alt="logo" width="50" height="50" />
         </a>
         <a class="navbar-brand brand-logo-mini" href="../index.html">
           <img src="../images/logo-mini.svg" alt="logo" />
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
           <span class="mdi mdi-menu"></span>
         </button>
       </div>
@@ -53,7 +55,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#facturas" aria-expanded="false" aria-controls="facturas">
               <i class="menu-icon fas fa-file-alt"></i>
-              <span class="menu-title">Documentos</span> 
+              <span class="menu-title">Documentos</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="facturas">
@@ -68,8 +70,9 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#proveedores" aria-expanded="false" aria-controls="proveedores">
-              <i class="menu-icon fas fa-user-tie"></i> 
+            <a class="nav-link" data-toggle="collapse" href="#proveedores" aria-expanded="false"
+              aria-controls="proveedores">
+              <i class="menu-icon fas fa-user-tie"></i>
               <span class="menu-title">Proveedores / Personas</span>
               <i class="menu-arrow"></i>
             </a>
@@ -86,8 +89,8 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ingresos" aria-expanded="false" aria-controls="ingresos">
-              <i class="menu-icon fas fas fa-indent"></i> 
-              <span class="menu-title">Ingresos</span> 
+              <i class="menu-icon fas fas fa-indent"></i>
+              <span class="menu-title">Ingresos</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ingresos">
@@ -106,7 +109,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#egresos" aria-expanded="false" aria-controls="egresos">
-              <i class="menu-icon fas fas fa-outdent"></i> 
+              <i class="menu-icon fas fas fa-outdent"></i>
               <span class="menu-title">Egresos</span>
               <i class="menu-arrow"></i>
             </a>
@@ -130,7 +133,7 @@
       <div class="main-panel">
         <div class="content-wrapper">
 
-         <!-- Modal -->
+          <!-- Modal -->
           <div id="modalopci" class="modal fade" role="dialog">
             <div class="modal-dialog ">
               <!-- Contenido del modal -->
@@ -138,17 +141,20 @@
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">   
+                <div class="modal-body">
                   <h3 class="text-center"> Por Favor escoja la cuenta :</h3>
                   <div class="container">
                     <div class="row">
-                      <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresos.php" class="btn btn-outline-success btn-lg btn-block">General</a></div>
+                      <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresos.php"
+                          class="btn btn-outline-success btn-lg btn-block">General</a></div>
                     </div>
                     <div class="row">
-                    <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresosSep.php" class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
+                      <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresosSep.php"
+                          class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
                     </div>
                     <div class="row">
-                    <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresosPie.php" class="btn btn-outline-info btn-lg btn-block">PIE</a></div>
+                      <div class="col-12 text-center pt-3"><a href="../pageslv/crearEgresosPie.php"
+                          class="btn btn-outline-info btn-lg btn-block">PIE</a></div>
                     </div>
                   </div>
                 </div>
@@ -157,28 +163,33 @@
               </div>
             </div>
           </div>
-<!-- Modal2--------------------------------------------------------------------------------- -->
-<div id="modalopc2" class="modal fade" role="dialog">
-  <div class="modal-dialog ">
-  <!-- Contenido del modal -->
-  <div class="modal-content">
-    <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
-    </div>
-      <div class="modal-body">   
-        <h3 class="text-center"> Por Favor escoja la cuenta :</h3>
-          <div class="container">
-            <div class="row">
-            <div class="col-12 text-center pt-3"><a href="../pageslv/crearIngresos.php" class="btn btn-outline-success btn-lg btn-block">General</a></div>
+          <!-- Modal2--------------------------------------------------------------------------------- -->
+          <div id="modalopc2" class="modal fade" role="dialog">
+            <div class="modal-dialog ">
+              <!-- Contenido del modal -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <h3 class="text-center"> Por Favor escoja la cuenta :</h3>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12 text-center pt-3"><a href="../pageslv/crearIngresos.php"
+                          class="btn btn-outline-success btn-lg btn-block">General</a></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 text-center pt-3"><a href="../pageslv/crearIngresoSep.php"
+                          class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 text-center pt-3"><a href="../pageslv/crearIngresoPie.php"
+                          class="btn btn-outline-info btn-lg btn-block">PIE</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
             </div>
-            <div class="row">
-            <div class="col-12 text-center pt-3"><a href="../pageslv/crearIngresoSep.php" class="btn btn-outline-warning btn-lg btn-block">SEP</a></div>
           </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-      

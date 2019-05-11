@@ -1,30 +1,40 @@
 <?php
-
-require_once ("../claseslv/Conexion.php");
-require_once ("../claseslv/Cuenta.php");
-require_once ("../claseslv/CatEgresos.php");
-require_once ("../claseslv/CatPadreEgreso.php");
-require_once ("../claseslv/Factura.php");
 require_once ("../claseslv/Egreso.php");
+require_once ("../claseslv/Cuenta.php");
+require_once ("../claseslv/CatPadreEgreso.php");
 
+$id = $_GET['id'];
 
+$ingreso = new Ingreso();
+$datos = $ingreso->editarIngreso($id);
+for($i=0;$i<sizeof($datos);$i++){
+    
+    $id_cuenta = $datos[$i]["id_cuenta"];
+    $m1 = $datos[$i]["m1"];
 
+    $id_cat_padre = $datos[$i]["id_padre_ingreso"];
+    $m2 = $datos[$i]["m2"];
+    $padre_codigo = $datos[$i]["padre_codigo"];
 
+    $id_cat_hijo = $datos[$i]["id_cat_egresos"]; 
+    $m3 = $datos[$i]["m3"];
+    $hijo_codigo = $datos[$i]["hijo_codigo"];
+
+    $id_factura = $datos[$i]["id_factura"];
+    $folio = $datos[$i]["m5"];
+    $nombre = $datos[$i]["m10"];
+
+}
 
 $cuentas = new Cuenta();
-$datos = $cuentas->obtenerDatosCuenta();
+$datos2 = $cuentas->obtenerDatosCuentaNoSelect($id_cuenta);
 
-$catEgresos = new CatEgresos();
-$datos2 = $catEgresos->obtenerDatosCatEgresos();
+$padre = new CatPadreEgreso();
+$datos3 = $padre->obtenerDatosCatPadreEgresoNoSelect($id_cat_padre);
 
-$catPadreEgreso = new CatPadreEgreso();
-$datos3 = $catPadreEgreso->obtenerDatosCatPadreEgreso();
 
-$facturas = new Factura();
-$datos4 = $facturas->obtenerFacturasPagadas();
 
-$egreso = new Egreso();
-$count = $egreso->contarPie();
+
 
 
 
@@ -39,18 +49,21 @@ include ("includes/header.php");
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="card-title">Número Correlativo <?php echo $count+1;?></h1>
-                        <form action="../procesoslv/crearEgresosPie.php" class="form-sample" method="POST">
+                        <h1 class="card-title">Número Correlativo <?php echo $id;?></h1>
+                        <form action="../procesoslv/editarEgreso.php" class="form-sample" method="POST">
+                            <input type="text" name="id" value="<?php echo $id;?>" hidden>
                             <div class="form-group">
                                 <label for="">Seleccionar Cuenta Banco</label>
-                                <select name="select_cuenta_egresos"  class="form-control" >
-                                    <option value="3" selected >PIE</option>
+                                <select name="select_cuenta_egresos" id="select_cuenta_egresos" class="form-control" disabled>
+                                <option value="<?php echo $id_cuenta;?>" selected ><?php echo $m1;?></option>
+                                    <?php for($i=0;$i<sizeof($datos2);$i++){?>
+                                        <option  value="<?php echo $datos2[$i]["id"];?>"><?php echo $datos2[$i]["nombre"];}?></option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="">Cuenta General</label>
                                 <select name="select_cat_egresos_padre"  class="form-control" id="select_cat_egresos_padre" required>
-                                    <option value="" selected disabled>-- Seleccione --</option>
+                                <option value="<?php echo $id_cat_padre;?>" selected ><?php echo $padre_codigo." | ".$m2;?></option>
                                     <?php for($i=0;$i<sizeof($datos3);$i++){?>
                                         <option value="<?php echo $datos3[$i]["id_padre_egreso"];?>"><?php echo $datos3[$i]["codigo"]." | ".$datos3[$i]["nombre"];}?></option>
                                 </select>
@@ -58,13 +71,13 @@ include ("includes/header.php");
                             <div class="form-group">
                                 <label for="">Sub Cuenta</label>
                                 <select name="select_cat_egresos" class="form-control" id="select_cat_egresos" required>
-                                    <option value="" selected disabled>-- Seleccione --</option>   
+                                <option value="<?php echo $id_cat_hijo;?>" selected ><?php echo $hijo_codigo." | ".$m3;?></option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="">Factura</label>
                                 <select name="select_factura_egreso"  class="form-control" id="select_factura_egreso" required>
-                                    <option value="" selected disabled>-- Seleccione --</option>    
+                                <option value="<?php echo $id_factura;?>" selected ><?php echo $folio." | ".$nombre;?></option>   
                                 </select>
                             </div>
                             <div class="form-group">
@@ -93,7 +106,7 @@ include ("includes/header.php");
 
 
                 $factura = new Factura();
-                $datosf = $factura->obtenerFacturasPagadas();
+                $datosf = $factura->obtenerFacturasPagadasEditar();
             ?>
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
@@ -165,8 +178,9 @@ include ("includes/header.php");
   </div>
 </div>
 
-<script src="../js/categoriaslv.js"></script>
-<script src="../js/facturaslv.js"></script>
+<script src="../js/categorias_editar.js"></script>
+<script src="../js/facturas.js"></script>
 <?php include ("includes/footer.php");?>
+
 
 

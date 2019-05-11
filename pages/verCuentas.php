@@ -38,11 +38,8 @@ include ("includes/header.php");
                                     <?php echo $datos[$i]["capital"]; ?>
                                 </th>
                                 <th>
-
-                                    
                                     <a href="editarCuentas.php?id=<?php echo $datos[$i]["id"]; ?>" class="btn btn-xs btn-warning">Editar</a>
-                                    <a href="" class="btn btn-xs btn-danger">Eliminar</a>
-                                   
+                                    <a href="../procesos/eliminarCuentas.php?id=<?php echo $datos[$i]["id"]; ?>" class="btn btn-xs btn-danger">Eliminar</a>
                                 </th>
                             </tr>
                             <?php }?>

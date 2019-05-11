@@ -8,6 +8,7 @@ $id = $_GET['id'];
 $egreso = new Egreso();
 $datos = $egreso->editarEgreso($id);
 for($i=0;$i<sizeof($datos);$i++){
+    
     $id_cuenta = $datos[$i]["id_cuenta"];
     $m1 = $datos[$i]["m1"];
 
@@ -53,11 +54,10 @@ include ("includes/header.php");
                             <input type="text" name="id" value="<?php echo $id;?>" hidden>
                             <div class="form-group">
                                 <label for="">Seleccionar Cuenta Banco</label>
-                                <select name="select_cuenta_egresos" id="select_cuenta_egresos" class="form-control" required>
+                                <select name="select_cuenta_egresos" id="select_cuenta_egresos" class="form-control" disabled>
                                 <option value="<?php echo $id_cuenta;?>" selected ><?php echo $m1;?></option>
                                     <?php for($i=0;$i<sizeof($datos2);$i++){?>
                                         <option  value="<?php echo $datos2[$i]["id"];?>"><?php echo $datos2[$i]["nombre"];}?></option>
-                                    <?php?>    
                                 </select>
                             </div>
                             <div class="form-group">
@@ -66,7 +66,6 @@ include ("includes/header.php");
                                 <option value="<?php echo $id_cat_padre;?>" selected ><?php echo $padre_codigo." | ".$m2;?></option>
                                     <?php for($i=0;$i<sizeof($datos3);$i++){?>
                                         <option value="<?php echo $datos3[$i]["id_padre_egreso"];?>"><?php echo $datos3[$i]["codigo"]." | ".$datos3[$i]["nombre"];}?></option>
-                                    <?php?>      
                                 </select>
                             </div>
                             <div class="form-group">

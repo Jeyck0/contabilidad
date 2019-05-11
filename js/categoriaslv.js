@@ -20,7 +20,7 @@ $(function(){
                 method:"POST",
                 data: 'padre_id='+padreID,
                 error: function(request, errorcode, errortext){
-                    $("#respuesta").html("<p>Ocurrió el siguiente error: <strong>" + errortext + "</strong></p>");
+                    $("#respuesta").html("<p>Ocurrió el siguiente error: <strong>" + request + "</strong></p>");
                }, 
                 success: function(html){
                     $('#select_cat_egresos').html(html);

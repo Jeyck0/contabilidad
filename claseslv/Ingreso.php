@@ -5,6 +5,7 @@ header ('Access-Control-Allow-Origin: * ');
 Class Ingreso {
     public $ingresos;
     public $ingresos2;
+    public $ingresos3;
     public $conectar;
 
     public $monto;
@@ -17,6 +18,7 @@ Class Ingreso {
         $this->conectar = new Conexion();
         $this->ingresos = array();
         $this->ingresos2 = array();
+        $this->ingresos3 = array();
 
     }
     public function insertarIngresos($id_cuenta_ingreso,$id_cat_ingresos_ingreso,$monto_ingreso,$comentario_ingreso,$ingreso_fecha){
@@ -118,6 +120,38 @@ Class Ingreso {
         }
 
         return $this->ingresos2;
+    }
+
+    public function contarPie(){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT COUNT(id) as cid from ingresos_pie";
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $contar = $dado['cid'];
+        }
+
+        return $contar;
+    }
+
+    public function obtenerDatosIngresosPie(){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT i.id as c0, `monto`as c4, `id_cuenta`, DATE_FORMAT(fecha, '%d/%m/%Y') as c5, i.id_cat_ingresos, `comentario` as c6 ,c.nombre as c1,ci.nombre as c3,cpi.nombre as c2
+        FROM `ingresos_pie` i
+        INNER JOIN cuentas c
+        ON c.id=id_cuenta
+        INNER JOIN cat_ingresos ci
+        ON i.id_cat_ingresos=ci.id_cat_ingresos
+        INNER JOIN cat_padre_ingresos cpi
+        ON ci.id_cat_padre_ingresos = cpi.id_padre_ingreso
+        ORDER BY i.id DESC";   
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->ingresos3[] = $dado;
+        }
+
+        return $this->ingresos3;
     }
     
 }

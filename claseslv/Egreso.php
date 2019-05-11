@@ -109,6 +109,52 @@ Class Egreso {
         return $this->egresos;
     }
 
+    public function editarEgresoSep($sid){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT e.id_egreso as m0, `id_cuenta`, e.id_cat_egresos as id_cat_egresos, e.id_factura, DATE_FORMAT(fecha, '%d/%m/%Y'),c.nombre as m1,subcat.nombre as m3,subcat.codigo as hijo_codigo,catp.nombre as m2,catp.id_padre_egreso as id_padre_egreso,catp.codigo as padre_codigo,f.id_factura as id_factura,f.folio as m5,f.fecha_emision as m6,f.fecha_pago as m7,f.tipo as m4,f.monto as m11,f.detalle as m8,p.rut as m9,p.razon_social as m10
+        FROM `egresos_sep` e 
+        INNER JOIN cuentas c 
+        ON e.id_cuenta = c.id 
+        INNER JOIN cat_egresos subcat
+        ON subcat.id_cat_egreso= e.id_cat_egresos
+        INNER JOIN cat_padre_egresos catp
+        ON subcat.id_cat_padre_egresos = catp.id_padre_egreso
+        INNER JOIN facturas f
+        ON f.id_factura=e.id_factura
+        INNER JOIN proveedores p
+        ON f.id_proveedor = p.id_proveedores WHERE e.id_egreso='$sid'";   
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->egresos[] = $dado;
+        }
+
+        return $this->egresos;
+    }
+
+    public function editarEgresoPie($sid){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT e.id_egreso as m0, `id_cuenta`, e.id_cat_egresos as id_cat_egresos, e.id_factura, DATE_FORMAT(fecha, '%d/%m/%Y'),c.nombre as m1,subcat.nombre as m3,subcat.codigo as hijo_codigo,catp.nombre as m2,catp.id_padre_egreso as id_padre_egreso,catp.codigo as padre_codigo,f.id_factura as id_factura,f.folio as m5,f.fecha_emision as m6,f.fecha_pago as m7,f.tipo as m4,f.monto as m11,f.detalle as m8,p.rut as m9,p.razon_social as m10
+        FROM `egresos_pie` e 
+        INNER JOIN cuentas c 
+        ON e.id_cuenta = c.id 
+        INNER JOIN cat_egresos subcat
+        ON subcat.id_cat_egreso= e.id_cat_egresos
+        INNER JOIN cat_padre_egresos catp
+        ON subcat.id_cat_padre_egresos = catp.id_padre_egreso
+        INNER JOIN facturas f
+        ON f.id_factura=e.id_factura
+        INNER JOIN proveedores p
+        ON f.id_proveedor = p.id_proveedores WHERE e.id_egreso='$sid'";   
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->egresos[] = $dado;
+        }
+
+        return $this->egresos;
+    }
+
 
     public function updateEgreso($uid,$uid_cuenta,$uid_cat_egresos,$uid_factura){
         $conectar = $this->conectar->conectar();

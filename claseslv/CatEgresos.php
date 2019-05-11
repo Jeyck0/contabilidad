@@ -35,4 +35,17 @@ Class CatEgresos {
 
         return $this->catEgresos;
     }
+
+    public function obtenerDatosCatEgresosId($id_padre_cat){
+        $conectar = $this->conectar->conectar();
+        $query = "SELECT ce.nombre, id_cat_padre_egresos FROM cat_egresos ce, cat_padre_egresos cpe WHERE ce.id_cat_padre_egresos = cpe.id_padre_egreso AND id_cat_padre_egresos = '$id_padre_cat'"; 
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->catEgresos[] = $dado;
+        }
+
+        return $this->catEgresos;
+
+    }
 }

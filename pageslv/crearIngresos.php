@@ -38,7 +38,6 @@ include ("includes/header.php");
                                     <option value="" selected disabled>-- Seleccione --</option>
                                     <?php for($i=0;$i<sizeof($datos2);$i++){?>
                                         <option value="<?php echo $datos2[$i]["id_padre_ingreso"];?>"><?php echo $datos2[$i]["codigo"]." | ".$datos2[$i]["nombre"];}?></option>
-                                    <?php?>      
                                 </select>
                             </div>
                             <div class="form-group">
