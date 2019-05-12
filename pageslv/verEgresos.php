@@ -44,7 +44,6 @@ include ("includes/header.php");
                                 <th>
                                     <a href="pdfegreso.php?id=<?php echo $datos2[$i]["m0"]; ?>" type="submit" name="descargar" class="btn btn-xs btn-success">Descargar PDF</a>
                                     <a href="editarEgreso.php?id=<?php echo $datos2[$i]["m0"]; ?>" class="btn btn-xs btn-warning">Editar</a>
-                                    <a href="" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal<?php echo $datos2[$i]["m0"]; ?>" >Eliminar</a>
                                 </th>
                                 <th><?php echo $datos2[$i]["m8"]; ?></th>
                                 <th><?php echo $datos2[$i]["m10"]; ?></th>
@@ -100,8 +99,7 @@ include ("includes/header.php");
                                 <th><?php echo $datos3[$i]["m0"]; ?></th>
                                 <th>
                                     <a href="pdfegresosep.php?id=<?php echo $datos3[$i]["m0"]; ?>" type="submit" name="descargar" class="btn btn-xs btn-success">Descargar PDF</a>
-                                    <a href="editarEgreso.php?id=<?php echo $datos3[$i]["m0"]; ?>" class="btn btn-xs btn-warning">Editar</a>
-                                    <a href="" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal<?php echo $datos3[$i]["m0"]; ?>" >Eliminar</a>
+                                    <a href="editarEgresoSep.php?id=<?php echo $datos3[$i]["m0"]; ?>" class="btn btn-xs btn-warning">Editar</a>
                                 </th>
                                 <th><?php echo $datos3[$i]["m8"]; ?></th>
                                 <th><?php echo $datos3[$i]["m10"]; ?></th>
@@ -157,8 +155,7 @@ include ("includes/header.php");
                                 <th><?php echo $datos4[$i]["m0"]; ?></th>
                                 <th>
                                     <a href="pdfegresopie.php?id=<?php echo $datos4[$i]["m0"]; ?>" type="submit" name="descargar" class="btn btn-xs btn-success">Descargar PDF</a>
-                                    <a href="editarEgreso.php?id=<?php echo $datos4[$i]["m0"]; ?>" class="btn btn-xs btn-warning">Editar</a>
-                                    <a href="" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModal<?php echo $datos4[$i]["m0"]; ?>" >Eliminar</a>
+                                    <a href="editarEgresoPie.php?id=<?php echo $datos4[$i]["m0"]; ?>" class="btn btn-xs btn-warning">Editar</a>
                                 </th>
                                 <th><?php echo $datos4[$i]["m8"]; ?></th>
                                 <th><?php echo $datos4[$i]["m10"]; ?></th>
@@ -184,10 +181,10 @@ include ("includes/header.php");
                                     </div>
                                     <div class="modal-footer">
                                     <form action="../procesos/eliminar_egreso.php" method="POST">
-                                                        <input type="hidden" name="id" value="<?php echo $datos4[$i]["m0"]; ?>">
-                                                        <button type="submit" name="btn-delete" class="btn btn-success">Si</button>
-                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                    </form>
+                                                <input type="hidden" name="id" value="<?php echo $datos4[$i]["m0"]; ?>">
+                                                <button type="submit" name="btn-delete" class="btn btn-success">Si</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                            </form>
                                         </form>
                                     </div>
                                     </div>

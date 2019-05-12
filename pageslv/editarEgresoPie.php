@@ -6,8 +6,9 @@ require_once ("../claseslv/CatPadreEgreso.php");
 $id = $_GET['id'];
 
 $egreso = new Egreso();
-$datos = $egreso->editarEgreso($id);
+$datos = $egreso->editarEgresoPie($id);
 for($i=0;$i<sizeof($datos);$i++){
+    
     $id_cuenta = $datos[$i]["id_cuenta"];
     $m1 = $datos[$i]["m1"];
 
@@ -49,11 +50,11 @@ include ("includes/header.php");
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">Número Correlativo <?php echo $id;?></h1>
-                        <form action="../procesoslv/editarEgreso.php" class="form-sample" method="POST">
+                        <form action="../procesoslv/editarEgresoPie.php" class="form-sample" method="POST">
                             <input type="text" name="id" value="<?php echo $id;?>" hidden>
                             <div class="form-group">
                                 <label for="">Seleccionar Cuenta Banco</label>
-                                <select name="select_cuenta_egresos" id="select_cuenta_egresos" class="form-control" required>
+                                <select name="select_cuenta_egresos" id="select_cuenta_egresos" class="form-control" disabled>
                                 <option value="<?php echo $id_cuenta;?>" selected ><?php echo $m1;?></option>
                                     <?php for($i=0;$i<sizeof($datos2);$i++){?>
                                         <option  value="<?php echo $datos2[$i]["id"];?>"><?php echo $datos2[$i]["nombre"];}?></option>

@@ -2,10 +2,10 @@ $(function(){
 
     $('#select_cat_ingresos_padre').on('change',function(){
         var padreID = $(this).val();
-        
+        // alert(padreID);
         if(padreID){
             $.ajax({
-                url:"http://localhost/conta/js/ingresoData.php",
+                url:"http://localhost/conta/js/ingresoDatalv.php",
                 method:"POST",
                 data: 'padre_id='+padreID,
                 error: function(request, errorcode, errortext){

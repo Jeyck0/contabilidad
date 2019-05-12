@@ -75,6 +75,14 @@ Class Proveedor {
         return $consultar;
 
     }
+    public function actualizarDatosProveedor($id,$rut, $razon, $giro){
+        $conectar = $this->conectar->conectar();
+        $query_update="UPDATE proveedores SET rut = '".$rut."', razon_social = '".$razon."', giro = '".$giro."' WHERE id_proveedores = '".$id."' ";
+        $consultar = mysqli_query($conectar,$query_update);
+
+        return $consultar;
+
+    }
 
     public function obtenerDatosProveedorId($idp){
         $conectar = $this->conectar->conectar();
@@ -86,6 +94,15 @@ Class Proveedor {
         }
 
         return $this->proveedores;
+    }
+
+    public function eliminarProveedor($did){
+        $conectar = $this->conectar->conectar();
+        $query ="DELETE FROM proveedores WHERE id_proveedores ='$did'";
+        $query2 ="DELETE FROM facturas WHERE id_proveedor ='$did'";
+        $consultar = mysqli_query($conectar,$query2) && mysqli_query($conectar,$query);
+
+        return $consultar;
     }
 
 }
