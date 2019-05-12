@@ -93,7 +93,7 @@ include ("includes/header.php");
                             <tr>
                                 <th><?php echo $datos3[$i]["c0"]; ?></th>
                                 <th>
-                                <a href="pdfingreso.php?id=<?php echo $datos3[$i]["c0"]; ?>" type="submit" name="descargar" class="btn btn-xs btn-success">Descargar PDF</a>
+                                <a href="pdfingresopie.php?id=<?php echo $datos3[$i]["c0"]; ?>" type="submit" name="descargar" class="btn btn-xs btn-success">Descargar PDF</a>
                                 <a href="editarIngresoPie.php?id=<?php echo $datos3[$i]["c0"]; ?>" type="submit" name="descargar" class="btn btn-xs btn-warning">Editar</a>
                                 </th>
                                 <th><?php echo $datos3[$i]["c6"]; ?></th>

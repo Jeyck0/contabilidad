@@ -6,7 +6,7 @@ if(isset($_POST['crear_egreso_btn_aceptar'])){
 
     $id = $_POST['id'];
     
-    $select_cuenta_egresos = 2;
+    $select_cuenta_egresos = 3;
     $select_cat_egresos = $_POST['select_cat_egresos'];
     $select_factura_egreso = $_POST['select_factura_egreso'];
 }

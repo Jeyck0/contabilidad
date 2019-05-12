@@ -15,7 +15,11 @@ $fecha_ingreso = $_POST['fecha_ingreso'];
 }
 
 
-
+// echo $select_cuenta_ingresos;
+// echo $select_cat_ingresos;
+// echo $monto_ingreso_in;
+// echo $comentario_ingreso_txt;
+// echo $fecha_ingreso;
 
 
 

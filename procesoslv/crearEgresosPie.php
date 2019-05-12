@@ -14,7 +14,10 @@ $select_factura_egreso = $_POST['select_factura_egreso'];
 }
 
 
-echo $select_cuenta_egresos;
+// echo $select_cuenta_egresos;
+// echo $select_cat_egresos_padre;
+// echo $select_cat_egresos;
+// echo $select_factura_egreso;
 
 
 $egreso = new Egreso();
@@ -25,5 +28,5 @@ $factura->aplicarEgreso($select_factura_egreso);
 
 
 
-header('Location: ../pageslv/verEgresos.php'); 
+// header('Location: ../pageslv/verEgresos.php'); 
 
