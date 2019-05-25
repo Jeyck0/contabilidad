@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 250px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+</style>
 <head>
   <script src="../js/jquery-3.3.1.min.js"></script>
   <!-- Required meta tags -->
@@ -41,91 +54,93 @@
       </div>
     </nav>
     <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
+    <div class="container-fluid page-body-wrapper ">
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#facturas" aria-expanded="false" aria-controls="facturas">
-              <i class="menu-icon fas fa-file-alt"></i>
-              <span class="menu-title">Documentos</span> 
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="facturas">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/crearFactura.php">Agregar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/verFactura.php">Ver</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#proveedores" aria-expanded="false" aria-controls="proveedores">
-              <i class="menu-icon fas fa-user-tie"></i> 
-              <span class="menu-title">Proveedores / Personas</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="proveedores">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/crearProveedores.php">Agregar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/verProveedores.php">Ver</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ingresos" aria-expanded="false" aria-controls="ingresos">
-              <i class="menu-icon fas fas fa-indent"></i> 
-              <span class="menu-title">Ingresos</span> 
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ingresos">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" id="btn_ingreso" style="cursor:pointer;">Crear</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/verIngresos.php">Ver</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/exportar_ingresos.php">Exportar</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#egresos" aria-expanded="false" aria-controls="egresos">
-              <i class="menu-icon fas fas fa-outdent"></i> 
-              <span class="menu-title">Egresos</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="egresos">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" id="btn_egreso" style="cursor:pointer;">Crear</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/verEgresos.php">Ver</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../pages/exportar_egresos.php">Exportar</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+        <div class="sidenav">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">
+                <i class="menu-icon mdi mdi-television"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#facturas" aria-expanded="false" aria-controls="facturas">
+                <i class="menu-icon fas fa-file-alt"></i>
+                <span class="menu-title">Documentos</span> 
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="facturas">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/crearFactura.php">Agregar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/verFactura.php">Ver</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#proveedores" aria-expanded="false" aria-controls="proveedores">
+                <i class="menu-icon fas fa-user-tie"></i> 
+                <span class="menu-title">Proveedores / Personas</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="proveedores">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/crearProveedores.php">Agregar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/verProveedores.php">Ver</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ingresos" aria-expanded="false" aria-controls="ingresos">
+                <i class="menu-icon fas fas fa-indent"></i> 
+                <span class="menu-title">Ingresos</span> 
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ingresos">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" id="btn_ingreso" style="cursor:pointer;">Crear</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/verIngresos.php">Ver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/exportar_ingresos.php">Exportar</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#egresos" aria-expanded="false" aria-controls="egresos">
+                <i class="menu-icon fas fas fa-outdent"></i> 
+                <span class="menu-title">Egresos</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="egresos">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" id="btn_egreso" style="cursor:pointer;">Crear</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/verEgresos.php">Ver</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/exportar_egresos.php">Exportar</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
       </nav>
       <!-- partial -->
       <div class="main-panel">
