@@ -13,6 +13,7 @@
   <!-- plugins:js -->
   <script src="../vendors/js/vendor.bundle.base.js"></script>
   <script src="../vendors/js/vendor.bundle.addons.js"></script>
+  <script src="../assets/datatables/jquery.dataTables.min.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->

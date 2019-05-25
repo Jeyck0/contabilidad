@@ -5,9 +5,14 @@ $(function(){
         
         if(padreID){
             $.ajax({
+                
                 url:"http://localhost/conta/js/ingresoData.php",
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                  },
                 method:"POST",
                 data: 'padre_id='+padreID,
+                
                 error: function(request, errorcode, errortext){
                     $("#respuesta").html("<p>Ocurrió el siguiente error: <strong>" + errortext + "</strong></p>");
                 },

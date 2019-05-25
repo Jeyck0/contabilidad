@@ -22,7 +22,7 @@ include ("includes/header.php");
             <div class="card-body">
                 <h4 class="card-title">listado de Facturas</h4>
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered" >
+                    <table class="table display dataTable " style="width:100%" id="t-doc"  >
                         <thead>
                             <tr>
                                 <th>Acciones</th>
@@ -117,6 +117,12 @@ include ("includes/header.php");
 <script src="../js/boton.js"></script>
 <script>
 $(document).ready(function(){
+
+    //Se inicializa el dataTable
+    $('#t-doc').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
+
     if($("#swich").val()==1){
         $("[id*=btn_pagar]").removeClass("btn-success");
         $("[id*=btn_pagar]").addClass("btn-primary");

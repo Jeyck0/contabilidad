@@ -8,9 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Laura Vicuña</title>
   <!-- plugins:css -->
+  <link rel="stylesheet" href="../assets/datatables/jquery.dataTables.min.css">
   <link rel="stylesheet" href="../vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+  <!-- <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css"> -->
   <link rel="stylesheet" href="../vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="../vendors/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- endinject -->

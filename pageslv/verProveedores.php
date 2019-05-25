@@ -14,7 +14,7 @@ include ("includes/header.php");
             <div class="card-body">
                 <h4 class="card-title">listado de Proveedores</h4>
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered" >
+                    <table class="table display dataTable" id="tabla_proveedores" style="width:100%" >
                         <thead>
                             <tr>
                                 <th>Rut</th>
@@ -82,3 +82,8 @@ include ("includes/header.php");
     </div>
 </div>
 <?php include ("includes/footer.php");?>
+<script>
+$(document).ready( function () {
+    $('#tabla_proveedores').DataTable();
+} );
+</script>

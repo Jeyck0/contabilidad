@@ -119,5 +119,62 @@ Class Ingreso {
 
         return $this->ingresos2;
     }
+
+    public function updateIngreso($uid,$uid_cuenta,$uid_cat_egresos,$fecha,$monto,$comentario){
+        $conectar = $this->conectar->conectar();
+        $query ="   UPDATE ingresos 
+                    SET id_cuenta = '".$uid_cuenta."', id_cat_ingresos = '".$uid_cat_egresos."',fecha = '".$fecha."', monto = '".$monto."', comentario = '".$comentario."' 
+                    WHERE id = '".$uid."' ";
+        $consultar = mysqli_query($conectar,$query);
+
+        return $consultar;
+    }
+
+    public function editarIngreso($sid){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT i.id as c0, `monto`as c4, `id_cuenta`, i.id_cat_ingresos as id_cat_ingresos, DATE_FORMAT(fecha, '%d/%m/%Y') as c5, `comentario` as c6, c.nombre as m1,subcat.nombre as m3,subcat.codigo as hijo_codigo,catp.nombre as m2,catp.id_padre_ingreso as id_padre_ingreso,catp.codigo 
+        FROM `ingresos` i 
+        INNER JOIN cuentas c ON c.id=id_cuenta 
+        INNER JOIN cat_ingresos subcat ON subcat.id_cat_ingresos= i.id_cat_ingresos 
+        INNER JOIN cat_padre_ingresos catp ON subcat.id_cat_padre_ingresos = catp.id_padre_ingreso 
+        INNER JOIN cat_ingresos ci ON i.id_cat_ingresos=ci.id_cat_ingresos 
+        INNER JOIN cat_padre_ingresos cpi ON ci.id_cat_padre_ingresos = cpi.id_padre_ingreso 
+        WHERE i.id = '$sid' ";   
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->ingresos[] = $dado;
+        }
+
+        return $this->ingresos;
+    }
+
+
+    public function updateIngresoSep($uid,$uid_cuenta,$uid_cat_egresos,$fecha,$monto,$comentario){
+        $conectar = $this->conectar->conectar();
+        $query ="UPDATE ingresos_sep SET id_cuenta = '".$uid_cuenta."', id_cat_ingresos = '".$uid_cat_egresos."',fecha = '".$fecha."', monto = '".$monto."', comentario = '".$comentario."' WHERE id = '".$uid."' ";
+        $consultar = mysqli_query($conectar,$query);
+
+        return $consultar;
+    }
+
+    public function editarIngresoSep($sid){
+        $conectar = $this->conectar->conectar();
+        $query ="SELECT i.id as c0, `monto`as c4, `id_cuenta`, i.id_cat_ingresos as id_cat_ingresos, DATE_FORMAT(fecha, '%d/%m/%Y') as c5, `comentario` as c6, c.nombre as m1,subcat.nombre as m3,subcat.codigo as hijo_codigo,catp.nombre as m2,catp.id_padre_ingreso as id_padre_ingreso,catp.codigo 
+        FROM `ingresos_sep` i 
+        INNER JOIN cuentas c ON c.id=id_cuenta 
+        INNER JOIN cat_ingresos subcat ON subcat.id_cat_ingresos= i.id_cat_ingresos 
+        INNER JOIN cat_padre_ingresos catp ON subcat.id_cat_padre_ingresos = catp.id_padre_ingreso 
+        INNER JOIN cat_ingresos ci ON i.id_cat_ingresos=ci.id_cat_ingresos 
+        INNER JOIN cat_padre_ingresos cpi ON ci.id_cat_padre_ingresos = cpi.id_padre_ingreso 
+        WHERE i.id = '$sid' ";   
+        $consultar = mysqli_query($conectar,$query);
+
+        while($dado = mysqli_fetch_assoc($consultar)){
+            $this->ingresos[] = $dado;
+        }
+
+        return $this->ingresos;
+    }
     
 }

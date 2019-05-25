@@ -2,12 +2,18 @@ $(function(){
 
     $('#select_cat_ingresos_padre').on('change',function(){
         var padreID = $(this).val();
-        // alert(padreID);
+        
+        var getUrl = window.location;
+        var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
         if(padreID){
             $.ajax({
-                url:"http://localhost/conta/js/ingresoDatalv.php",
+                url:baseUrl+"/js/ajaxDatalv.php",
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                  },
                 method:"POST",
                 data: 'padre_id='+padreID,
+                
                 error: function(request, errorcode, errortext){
                     $("#respuesta").html("<p>Ocurrió el siguiente error: <strong>" + errortext + "</strong></p>");
                 },
