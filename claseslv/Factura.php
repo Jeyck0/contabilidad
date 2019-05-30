@@ -166,5 +166,15 @@ Class Factura {
         return $consultar;
     }
 
+    public function eliminarFactura($did){
+        $conectar = $this->conectar->conectar();
+        // $query ="DELETE FROM proveedores WHERE id_proveedores ='$did'";
+        $query ="DELETE FROM facturas WHERE id_factura ='$did'";
+        $consultar =  mysqli_query($conectar,$query);
+
+        return $consultar;
+    }
+
+
 
 }

@@ -41,9 +41,9 @@ include ("includes/header.php");
                             <?php for($i=0;$i<sizeof($datos);$i++){?>
                             <tr>
                                 <th>                                    
-                                    <a style="color:white;" class="btn btn-xs <?php echo $datos[$i]["respuesta"]; ?>"  name="btn_pagar" type="submit"  data-toggle="modal" data-target="#myModal<?php echo $datos[$i]["id_factura"]; ?>"><?php echo $datos[$i]["pago"]; ?> </a>
+                                    <a style="color:white;" class="btn btn-xs <?php echo $datos[$i]["respuesta"]; ?>"  name="btn_pagar" type="submit"  data-toggle="modal" data-target="#myModalp<?php echo $datos[$i]["id_factura"]; ?>"><?php echo $datos[$i]["pago"]; ?> </a>
                                     <a href="editarDocumento.php?id=<?php echo $datos[$i]["id_factura"]; ?>" class="btn btn-xs btn-warning">Editar</a>
-                                    <a href="" class="btn btn-xs btn-danger">Eliminar</a>
+                                    <a href="" data-toggle="modal" data-target="#myModal<?php echo $datos[$i]["id_factura"]; ?>" class="btn btn-xs btn-danger">Eliminar</a>
                                 </th>
                                 <th>
                                     <?php echo $datos[$i]["c1"]; ?>
@@ -72,8 +72,36 @@ include ("includes/header.php");
                                 <th>
                                     <?php echo $datos[$i]["c7"]; ?>
                                 </th>
-                                <!-- Modal -->
                                 <div id="myModal<?php echo $datos[$i]["id_factura"]; ?>" class="modal fade" role="dialog">
+                                <div class="modal-dialog modal-lg">
+                                    <!-- Contenido del modal -->
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-lg-12 grid-margin stretch-card">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="card-title"> ¿Desea eliminar este registro ? </h1> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form action="../procesoslv/eliminar_factura.php" method="POST">
+                                                <input type="hidden" name="id" value="<?php echo $datos[$i]["id_factura"]; ?>">
+                                                <button type="submit" name="btn-delete" class="btn btn-success">Si</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>                                           
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- Modal -->
+                                <div id="myModalp<?php echo $datos[$i]["id_factura"]; ?>" class="modal fade" role="dialog">
                                 <div class="modal-dialog ">
                                     <!-- Contenido del modal -->
                                     <div class="modal-content">

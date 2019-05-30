@@ -1,5 +1,5 @@
 <?php
-require_once ('../clases/Factura.php');
+require_once ('../claseslv/Factura.php');
 
 
 if(isset($_POST['btn-delete'])){
@@ -9,5 +9,5 @@ if(isset($_POST['btn-delete'])){
 $factura = new Factura();
 $factura->eliminarFactura($id);
 
-header('Location: ../pages/verFacturas.php'); 
+header('Location: ../pageslv/verFactura.php'); 
 

@@ -62,11 +62,10 @@ include ("includes/header.php");
                                         </div>                                
                                     </div>
                                     <div class="modal-footer">
-                                    <form action="../procesoslv/eliminar_proveedor.php" method="POST">
+                                        <form action="../procesoslv/eliminar_proveedor.php" method="POST">
                                                 <input type="hidden" name="id" value="<?php echo $datos[$i]["id_proveedores"]; ?>">
                                                 <button type="submit" name="btn-delete" class="btn btn-success">Si</button>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                            </form>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>                                           
                                         </form>
                                     </div>
                                     </div>
