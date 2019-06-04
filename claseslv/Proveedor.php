@@ -105,4 +105,13 @@ Class Proveedor {
         return $consultar;
     }
 
+    public function compararProveedor($rutProveedor){
+        $conectar = $this->conectar->conectar();
+        $query = mysqli_query($conectar, "SELECT rut FROM proveedores WHERE rut = '".$rutProveedor."'");
+        $rutDuplicado = mysqli_num_rows($query);
+
+        return $rutDuplicado;
+
+    }
+
 }

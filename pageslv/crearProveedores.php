@@ -2,6 +2,7 @@
 
 include ("includes/header.php");
 ?>
+<script src="../js/validarut.js"></script>
 
 <div class="row">
     <div class="col-md-6 d-flex align-items-stretch grid-margin">
@@ -10,18 +11,18 @@ include ("includes/header.php");
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Crear Proveedor</h4>
-                        <form action="../procesoslv/crearProveedores.php" class="form-sample" method="POST" name="formulario1">
+                        <form action="../procesoslv/crearProveedores.php" class="form-sample" method="POST" name="formulario1" onsubmit="return checkRut();">
                             <div class="form-group">
                                 <label for="">Rut</label>
-                                <input type="text" class="form-control" name="rut_proveedor_in">
+                                <input type="text" class="form-control" name="rut_proveedor_in" oninput="checkRut(this)" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Razon Social</label>
-                                <input type="text" class="form-control" name="razon_social_proveedor_in">
+                                <input type="text" class="form-control" name="razon_social_proveedor_in" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Giro</label>
-                                <input type="text" class="form-control" name="giro_proveedor_in">
+                                <input type="text" class="form-control" name="giro_proveedor_in" required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success mr-2" name="crear_proveedor_btn_aceptar">Aceptar</button>
